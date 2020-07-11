@@ -1,0 +1,20 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.intro {
+	background-color: #ccc;
+	text-align: center;
+	padding: 50px;
+}
+
+.intro h1 {
+	font-size: 24pt;
+	margin-bottom: 20px;
+}
