@@ -6,6 +6,17 @@
 
 body {
 	font-family: sans-serif;
+	background-color: #aaa;
+}
+
+section, footer {
+	border-top: 1px solid #ccc;
+	padding: 50px;
+	background-color: #fff;
+}
+
+footer {
+	background-color: #eee;
 }
 
 .intro {
