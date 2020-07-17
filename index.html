@@ -6,7 +6,7 @@
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
 
-		<link rel="stylesheet" href="css/style.css?cache=buster" />
+		<link rel="stylesheet" href="css/style.min.css?cache=buster" />
 		<script src="js/main.js?cache=buster"></script>
 	</head>
 	<body>
@@ -15,32 +15,44 @@
 			<p>One-liner, brand, credibility and other stuff</p>
 			<button>Call to action</button>
 		</main>
-		<section>
-			<h2>Unique selling point</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iure debitis aliquam obcaecati amet, possimus harum. Laborum laudantium repudiandae similique nisi provident sit adipisci voluptatum distinctio, beatae totam dicta recusandae.</p>
-		</section>
-		<section>
-			<h2>Technical features</h2>
-			<ul>
-				<li>Feature X</li>
-				<li>Feature Y</li>
-				<li>Feature Z</li>
-				<li>Feature A</li>
-				<li>Feature B</li>
-				<li>Feature C</li>
-			</ul>
-		</section>
-		<section>
-			<h2>Call to action</h2>
-			<form>
-				<label for="email">E-mail</label>
-				<input type="email" id="email" placeholder="E-mail address ..." />
-				<input type="submit" id="btnContact" value="Contact me" />
-			</form>
-		</section>
+		
+		<div class="container">
+			<section>
+				<h2>Unique selling point</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iure debitis aliquam obcaecati amet, possimus harum. Laborum laudantium repudiandae similique nisi provident sit adipisci voluptatum distinctio, beatae totam dicta recusandae.</p>
+			</section>
+			<section>
+				<h2>User features</h2>
+				<div class="grid">
+					<div class="col-halfs">Feature A</div>
+					<div class="col-halfs">Feature A</div>
+					<div class="col-halfs">Feature A</div>
+					<div class="col-halfs">Feature A</div>
+				</div>
+			</section>
+			<section>
+				<h2>Technical features</h2>
+				<div class="grid">
+					<div class="col-thirds">Feature A</div>
+					<div class="col-thirds">Feature A</div>
+					<div class="col-thirds">Feature A</div>
+					<div class="col-thirds">Feature A</div>
+					<div class="col-thirds">Feature A</div>
+					<div class="col-thirds">Feature A</div>
+				</div>
+			</section>
+			<section>
+				<h2>Call to action</h2>
+				<form>
+					<label for="email">E-mail</label>
+					<input type="email" id="email" placeholder="E-mail address ..." />
+					<input type="submit" id="btnContact" value="Contact me" />
+				</form>
+			</section>
+		</div>
+
 		<footer>
-			<p>&copy;2020</p>
-			<p>Contact</p>
+			<p>&copy; 2020 outfitted.ai</p>
 		</footer>
 	</body>
 </html>

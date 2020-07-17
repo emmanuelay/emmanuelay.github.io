@@ -9,6 +9,29 @@ body {
   background-color: #fff;
 }
 
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 50px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid .col-thirds {
+  flex: 1 0 33%;
+}
+
+.grid .col-halfs {
+  flex: 1 0 50%;
+}
+
 .intro {
   background-color: #ccc;
   text-align: center;
@@ -21,7 +44,12 @@ body {
 }
 
 footer {
+  margin-top: 300px;
   border-top: 1px solid #ccc;
   padding: 50px;
   background-color: #fff;
+  text-align: center;
+  font-size: 9pt;
+  text-transform: uppercase;
+  font-weight: bold;
 }

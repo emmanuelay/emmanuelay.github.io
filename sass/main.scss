@@ -1,8 +1,10 @@
 @import "theme/colors";
 @import "theme/typography";
+@import "theme/sizes";
 
 @import "base/base";
 
+@import "components/grid";
 @import "components/button";
 @import "components/intro";
 @import "components/footer";

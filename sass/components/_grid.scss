@@ -1,0 +1,16 @@
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.col {
+		
+		&-thirds {
+			flex: 1 0 33%;
+		}
+
+		&-halfs {
+			flex: 1 0 50%;
+		}
+	}
+}

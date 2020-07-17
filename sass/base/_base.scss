@@ -8,3 +8,12 @@ body {
 	font-family: $font-body;
 	background-color: $color-white;
 }
+
+.container {
+	width: $size-container;
+	margin: 0 auto;
+}
+
+section {
+	padding: $size-section-padding;
+}
