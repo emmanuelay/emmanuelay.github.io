@@ -1,0 +1,10 @@
+.intro {
+	background-color: #ccc;
+	text-align: center;
+	padding: 50px;
+
+	& h1 {
+		font-size: 24pt;
+		margin-bottom: 20px;
+	}
+}
