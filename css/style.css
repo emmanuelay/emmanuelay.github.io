@@ -1,6 +1,5 @@
-h1, h2 {
+h1, h2, h3 {
   font-weight: 400;
-  font-size: 16pt;
   letter-spacing: -1px;
 }
 
@@ -36,9 +35,11 @@ section {
 
 .grid .col-thirds {
   flex: 1 0 33%;
+  padding: 10px;
 }
 
 .grid .col-halfs {
+  padding: 10px;
   flex: 1 0 50%;
 }
 
@@ -96,4 +97,24 @@ footer {
   font-size: 9pt;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.features {
+  position: relative;
+}
+
+.features h2 {
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  left: 20px;
+  font-size: 15pt;
+  background-color: #e81726;
+  color: #fff;
+  padding: 5px 35px;
+  transform: rotateZ(-4deg);
+}
+
+.features h3 {
+  margin-top: 20px;
 }

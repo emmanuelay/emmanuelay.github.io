@@ -2,14 +2,17 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	
 
 	.col {
 		
 		&-thirds {
 			flex: 1 0 33%;
+			padding: 10px;
 		}
 
 		&-halfs {
+			padding: 10px;
 			flex: 1 0 50%;
 		}
 	}
