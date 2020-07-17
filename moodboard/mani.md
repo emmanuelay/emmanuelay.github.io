@@ -22,18 +22,14 @@ https://www.myfonts.com/fonts/daltonmaag/objektiv/1regular/
 ## Designs
 - https://99designs.com/profiles/jpsdesign/designs/1524356 (Kolla "read more" knappen i de 3 highlights'en 'submit a pitch', 'invest in a company' etc)
 - https://www.pinterest.se/pin/539798705338306012/ (nyttjandet av vit/svart och stora enfärgade ytor)
-- 
-
 
 ## Websites
 
 - https://cuberto.com
 - https://whiteboard.is
 
-
 ## Palettes / Colors
 - https://coolors.co/ffe74c-ff5964-ffffff-6bf178-35a7ff (A)
 - https://coolors.co/0c0f0a-ff206e-fbff12-41ead4-ffffff (B)
 - https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff (C)
 - https://coolors.co/70d6ff-ff70a6-ff9770-ffd670-e9ff70 (D)
-- 
