@@ -1,1 +1,11 @@
-$font-body: Helvetica, Verdana, sans-serif;
+$font-body: 'Open Sans', Helvetica, Verdana, sans-serif;
+
+h1, h2 {
+	font-weight: 400;
+	font-size: 16pt;
+	letter-spacing: -1px;
+}
+
+body {
+	font-weight: 300;
+}

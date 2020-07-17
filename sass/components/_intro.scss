@@ -1,10 +1,26 @@
 .intro {
-	background-color: #ccc;
-	text-align: center;
+	background-color: $color-secondary;
+	color: $color-white;
 	padding: 50px;
+	height: 800px;
+	border-top: 5px solid $color-primary;
 
-	& h1 {
-		font-size: 24pt;
-		margin-bottom: 20px;
+	.headliner {
+		width: 50%;
+		margin: 20% 50%;
+
+		h1 {
+			font-size: 30pt;
+			margin-bottom: 20px;
+
+			span {
+				color: $color-primary;
+			}
+		}
+		
+		p {
+			line-height: 1.5em;
+			margin-bottom: 40px;
+		}
 	}
 }
