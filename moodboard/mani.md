@@ -24,7 +24,7 @@ https://www.myfonts.com/fonts/daltonmaag/objektiv/1regular/
 - https://www.pinterest.se/pin/539798705338306012/ (nyttjandet av vit/svart och stora enfärgade ytor)
 
 ## Websites
-
+- https://designmodo.com/startup/ (<-- riktigt bra)
 - https://cuberto.com
 - https://whiteboard.is
 
