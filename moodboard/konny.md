@@ -12,6 +12,10 @@
   - Används i detta exempel https://dribbble.com/shots/6700371-Today-Look/attachments/1431494 och ser väldigt bra ut med gemener och versaler.
   - Färgerna kan funka rätt bra om man utnyttjar vit i stora ytor och dessa som accentfärger (se palette **A** nedan).
 
+### Montserrat
+**Title**
+- https://fonts.google.com/specimen/Montserrat?preview.text=Providing+personalized+fashion+experiences+for+online+commerce&preview.text_type=custom&query=Montserra#standard-styles
+
 
 ## Photos
 
@@ -32,7 +36,7 @@
 - [Svinbra parallax-effekt, kan vara nice om man kör något mode-inspirerat objekt i bakgrunden](https://www.fpp.net/contact)
   - Vår parallax hade även kunnat visa/spola igenom en animation om hur vår (outfit-)urvalsprocess funkar, steg för steg 
 - [Parallax-effekt fast horisontell](https://www.prevint.pt/en/be-careful)
-- [Heltäckande content som visa pågående navigering vid sidan](https://www.cropmark.lu)
+- [Heltäckande content som visa pågående navigering vid sidan](https://www.cropmark.lu) (<- Detta är min favorit)
 
 Conclusively, parallax?
 
