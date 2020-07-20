@@ -27,6 +27,11 @@
 - Typsnittet är väldigt snyggt. Gillar användning av konturtext för highlights.
   - https://www.myfonts.com/pack/594229
 
+### Palettes / Colors
+
+Generellt så tyckte jag färgerna var lite för lekfulla i A, C och D.
+B gav mig bäst känsla.
+
 ### Summary
 
 Sammanfattningsvis tycker jag det fanns några gemensamma nämnare mellan våra.
