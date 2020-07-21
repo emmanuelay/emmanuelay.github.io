@@ -38,3 +38,22 @@ Sammanfattningsvis tycker jag det fanns några gemensamma nämnare mellan våra.
 - Varje sektion av sidan skall täcka hela skärmen
 - Stor text
 - Eventuellt någon parallax-effekt
+
+# Decisions
+
+## Fonts
+
+### Title
+**Poppins**
+- https://fonts.google.com/specimen/Poppins?preview.text=Providing+personalized+fashion+experiences+for+online+commerce&preview.text_type=custom
+
+### Ingress
+**Raleway**
+- https://fonts.google.com/specimen/Raleway?query=ralewa
+
+## Design
+
+- https://dribbble.com/shots/7080960-CUBIX-Project-Collaboration-and-Organization
+  - Huvud-USPs skall vara heltäckande/ta varsin rad
+  - **Solution Features** skall brytas ner i grupper och dessa skall visualiseras likt det i https://designmodo.com/startup/ under Power of Code
+  - **Technical Features** skall brytas ner i grupper och dessa skall visualiseras likt det i https://designmodo.com/startup/ under Startup Features
