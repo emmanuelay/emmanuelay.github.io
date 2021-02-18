@@ -1,3 +1,5 @@
 baseURL = "http://emmanuelay.se/"
 languageCode = "en-us"
 title = "Emmanuel Ay"
+disableHugoGeneratorInject = true
+theme = "aurelius"

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+	<!-- BaseOf -->
+    <body>
+		<h1>baseOf</h1>
+        {{- partial "header.html" . -}}
+        <div id="content">
+        	{{- block "main" . }}{{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+		{{ .Kind }}
+    </body>
+</html>
