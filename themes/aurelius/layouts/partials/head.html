@@ -4,4 +4,7 @@
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }} (Aurelius)</title>
+	{{ $sassTemplate := resources.Get "scss/aurelius.scss" }}
+	{{ $style := $sassTemplate | resources.ExecuteAsTemplate "main.scss" . | resources.ToCSS | resources.Minify }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 </head>

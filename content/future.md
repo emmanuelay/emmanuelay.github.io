@@ -1,5 +1,5 @@
 ---
-title: "Start"
+title: "Future"
 author: "Emmanuel Ay"
 weight: 1
 menu: main

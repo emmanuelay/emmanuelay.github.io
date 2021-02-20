@@ -1,0 +1,31 @@
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	color: $fg-color;
+	background-color: $bg-color;
+	font-family: $font-family;
+	font-size: 1.8em;
+	font-weight: 400;
+	line-height: 1.8em;
+	@media only screen and (max-width : 768px) {
+		font-size: 1.6em;
+		line-height: 1.6em;
+	}
+}
+
+  a {
+	  color: $fg-color;
+
+	  :visited {
+		  color: $fg-color;
+	  }
+  }
