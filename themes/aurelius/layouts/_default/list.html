@@ -1,5 +1,6 @@
 {{ define "main" }}
-	<h1>default / list.html / {{ .Title }}</h1>
+	<h1>{{ .Title }}</h1>
+	<p>_default / list.html</p>
 	{{ .Content }}
 	{{ range .Pages.ByPublishDate.Reverse }}
 	<p>

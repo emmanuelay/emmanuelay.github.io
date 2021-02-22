@@ -1,14 +1,9 @@
-<div>
-	<h3>Header.html</h3>
-    <nav>
-		<ul>
-        {{ range .Site.Menus.main }}
-			<li>
-				<a href="{{ .URL }}">
-					{{ .Name }}
-				</a>
-			</li>
-        {{ end }}
-		</ul>
-    </nav>
-</div>
+<h1>{{ .Site.Title }}</h1>
+<nav>
+	<h3>Navigation</h3>
+	<ul>
+	{{ range .Site.Menus.main }}
+		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+	{{ end }}
+	</ul>
+</nav>

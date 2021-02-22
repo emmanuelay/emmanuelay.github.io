@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.Language.Lang }}">
+	<head>
     {{- partial "head.html" . -}}
-	<!-- BaseOf -->
+	</head>
     <body>
-		<h1>baseOf</h1>
         {{- partial "header.html" . -}}
-        <div id="content">
+		<p>default / baseof.html</p>
+        <section id="content">
         	{{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
+        </section>
 		{{- partial "meta.html" . -}}
+		{{- partial "footer.html" . -}}
     </body>
 </html>

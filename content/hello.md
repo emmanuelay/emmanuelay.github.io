@@ -7,6 +7,4 @@ menu: main
 weight: 20
 ---
 
-# Hello
-
 Id est consectetur magna aute. Laboris est velit pariatur fugiat ipsum laboris. Labore voluptate anim culpa dolor duis quis incididunt et. Sunt nostrud sit nisi culpa nulla laborum. Occaecat nisi nulla ex nulla.

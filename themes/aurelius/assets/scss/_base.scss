@@ -10,12 +10,14 @@ html {
 }
 
 body {
+	margin: 0;
+	padding: 0;
 	color: $fg-color;
 	background-color: $bg-color;
-	font-family: $font-family;
-	font-size: 1.8em;
+	font-family: $content-font-family;
+	font-size: 1.9em;
 	font-weight: 400;
-	line-height: 1.8em;
+	line-height: 1.9em;
 	@media only screen and (max-width : 768px) {
 		font-size: 1.6em;
 		line-height: 1.6em;
@@ -23,9 +25,36 @@ body {
 }
 
   a {
-	  color: $fg-color;
+	  color: $link-color;
+	  text-decoration: none;
+	  border-bottom: 1px solid $link-color;
 
-	  :visited {
-		  color: $fg-color;
+	  &:visited {
+		  color: $link-color-visited;
 	  }
+
+	  &:hover {
+		  border-bottom: 2px solid #000;
+	  }
+  }
+
+  h1, h2, h3, h4, h5 {
+	font-family: $header-font-family;
+	font-weight: 600;
+	letter-spacing: -.1rem;
+  }
+
+  footer {
+	  width: 100%;
+	  background-color: #ccc;
+	  margin: 0rem;
+	  padding: 2rem;
+  }
+
+  nav {
+	padding: 10rem;  
+  }
+
+  section {
+	  padding: 2rem 10rem;
   }
