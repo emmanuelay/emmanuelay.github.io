@@ -3,3 +3,9 @@ languageCode = "en-us"
 title = "Emmanuel Ay"
 disableHugoGeneratorInject = true
 theme = "aurelius"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+	Author = "Emmanuel Ay"
+	description = "Emmanuel Ays personal webpage"
+	Keywords = "emmanuel ay, mani, emmanuel mani ay, block21"
