@@ -3,7 +3,6 @@ title: "Home"
 author: "Emmanuel Ay"
 weight: 1
 draft: false
-menu: main
 type: home
 ---
 

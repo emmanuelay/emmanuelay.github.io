@@ -13,7 +13,7 @@ html {
 body {
 	box-sizing: border-box; /* Borders and padding are added to the height */
 	color: $fg-color;
-	background-color: $doc-color;
+	background-color: $bg-color;
 	font-family: $content-font-family;
 	font-size: 1.9em;
 	font-weight: 400;
@@ -23,25 +23,28 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: $header-font-family;
-	font-weight: 600;
+	font-weight: 300;
+	font-size: 3rem;
 	letter-spacing: -.1rem;
 }
 
 footer {
 	width: 100%;
-	background-color: #ccc;
 	margin: 0rem;
-	padding: 2rem;
-	border-top: 2px solid $fg-color;
+	padding: 6rem;
+	font-size: 1.5rem;
+	text-align: center;
+	color: rgb(204, 213, 216);
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: #fff;
-	background-color: rgb(18, 9, 61);
+	color: rgb(237, 242, 244);
+	background-color: rgb(43, 45, 66);
 	padding: 2rem;
+	border-bottom: 6px solid rgb(255, 0, 110);
 
 	h1 {
 		font-family: 'Poppins', cursive;
@@ -51,12 +54,17 @@ header {
 		padding: 5px;
 		letter-spacing: 0px;		
 
-		span {
+		a {
 			font-size: 1em;
-			color: #ccc;
+			text-decoration: none;
+			color: rgb(141, 153, 174);
 			padding-right: 10px;
 			margin-right: 10px;
-			border-right: 1px solid #cf0;
+			border-right: 1px solid #777;
+
+			&:hover {
+				color: rgb(255, 0, 110);
+			}
 		}
 	}
 
@@ -68,14 +76,17 @@ nav {
 		li {
 			display: inline-block;
 			a {
-				color: #cf0;
-				font-size: 1.6rem;
+				color: rgb(255, 0, 110);
+				font-family: 'Poppins', cursive;
+				font-weight: 600;
+				text-transform: uppercase;
+				font-size: 0.8em;
 				text-decoration: none;
 				padding: 0rem 1rem;
 				margin: 0rem 1rem;
 
 				&:visited {
-					color: #cf0;
+					color: rgb(255, 0, 110);
 				}
 
 				&:hover {
@@ -86,16 +97,24 @@ nav {
 	}
 }
 
+#flap {
+	width: 100%;
+	height: 460px;
+	background-color: #fff;
+	border-bottom: 1px solid rgb(207, 213, 216);
+}
+
 section {
 	background-color: $bg-color;
-	padding: 2rem 10rem;
+	margin: 0;
+	padding: 2rem 6rem;
 
 	&#content {
 		padding-bottom: 10rem;
 		
 		h1, h2, h3, h4, h5 {
-			margin-top: 4.5rem;
-			margin-bottom: 1.5rem;
+			padding-top: 2.5rem;
+			padding-bottom: 1.5rem;
 		}
 	}	
 }

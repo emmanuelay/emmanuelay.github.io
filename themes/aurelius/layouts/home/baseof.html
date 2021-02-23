@@ -6,9 +6,12 @@
 	<!-- BaseOf -->
     <body>
         {{- partial "header.html" . -}}
+		<div id="flap">
+
+		</div>
         <section id="content">
-			<p>home / baseof.html</p>
         	{{- block "main" . }}{{- end }}
+			<p>home / baseof.html</p>
         </section>        
 		{{- partial "meta.html" . -}}
 		{{- partial "footer.html" . -}}
