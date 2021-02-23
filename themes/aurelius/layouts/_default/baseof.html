@@ -4,9 +4,9 @@
     {{- partial "head.html" . -}}
 	</head>
     <body>
-        {{- partial "header.html" . -}}
-		<p>default / baseof.html</p>
+		{{- partial "header.html" . -}}
         <section id="content">
+			<p>default / baseof.html</p>
         	{{- block "main" . }}{{- end }}
         </section>
 		{{- partial "meta.html" . -}}

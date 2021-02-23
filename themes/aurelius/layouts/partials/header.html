@@ -1,9 +1,11 @@
-<h1>{{ .Site.Title }}</h1>
-<nav>
-	<h3>Navigation</h3>
-	<ul>
-	{{ range .Site.Menus.main }}
-		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-	{{ end }}
-	</ul>
-</nav>
+<header>
+	<h1>{{ .Site.Title }}</h1>
+	<nav>
+		<h3>Navigation</h3>
+		<ul>
+		{{ range .Site.Menus.main }}
+			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+		{{ end }}
+		</ul>
+	</nav>
+</header>
