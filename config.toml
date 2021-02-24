@@ -9,3 +9,13 @@ disableKinds = ["taxonomy", "term"]
 	Author = "Emmanuel Ay"
 	description = "Emmanuel Ays personal webpage"
 	Keywords = "emmanuel ay, mani, emmanuel mani ay, block21"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    noClasses = true
+    style = "dracula"
+    tabWidth = 4

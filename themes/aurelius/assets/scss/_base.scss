@@ -35,16 +35,26 @@ footer {
 	font-size: 1.5rem;
 	text-align: center;
 	color: rgb(204, 213, 216);
+
+	a {
+		color: rgb(204, 213, 216);
+	}
+
+	span {
+		border-left: 1px solid rgb(194, 203, 206);
+		padding-left: 1.5rem;
+		margin-left: 1rem;
+	}
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: rgb(237, 242, 244);
+	color: $fg-color;
 	background-color: rgb(43, 45, 66);
 	padding: 2rem;
-	border-bottom: 6px solid rgb(255, 0, 110);
+	/*border-bottom: 6px solid rgb(255, 0, 110);*/
 
 	h1 {
 		font-family: 'Poppins', cursive;
@@ -57,13 +67,10 @@ header {
 		a {
 			font-size: 1em;
 			text-decoration: none;
-			color: rgb(141, 153, 174);
-			padding-right: 10px;
-			margin-right: 10px;
-			border-right: 1px solid #777;
+			color: #fff;
 
 			&:hover {
-				color: rgb(255, 0, 110);
+				color: rgb(141, 153, 174);
 			}
 		}
 	}
@@ -117,4 +124,82 @@ section {
 			padding-bottom: 1.5rem;
 		}
 	}	
+}
+
+.highlight {
+	pre {
+		padding: 2rem;
+		border-radius: .4rem;
+	}
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table td, table th {
+    padding-left:8px;
+	padding-right:8px;
+	font-weight: 300;
+}
+
+table thead tr {
+    height: 50px;
+	font-size: 1.5rem;
+    background:#36304a;
+	color: #fff;
+}
+
+table tbody tr {
+    height:50px
+}
+
+table tbody tr:last-child {
+    border:0
+}
+
+table td, table th {
+    text-align:left
+}
+
+table td.l, table th.l {
+    text-align:right
+}
+
+table td.c, table th.c {
+    text-align:center
+}
+
+table td.r, table th.r {
+    text-align:center
+}
+
+.table100-head th {
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight:unset
+}
+
+tbody tr:nth-child(even) {
+    background-color:#f5f5f5
+}
+
+tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: gray;
+    line-height: 1.2;
+    font-weight:unset
+}
+
+tbody tr:hover {
+    color: #555;
+    background-color: #f5f5f5;
+    cursor:pointer
 }
