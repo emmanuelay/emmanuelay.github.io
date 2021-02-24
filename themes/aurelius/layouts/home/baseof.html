@@ -2,13 +2,13 @@
 <html lang="{{ .Site.Language.Lang }}">
 	<head>
     {{- partial "head.html" . -}}
+	{{ $streamsJS := resources.Get "js/streams.js" }}
+	<script type="text/javascript" src="{{ $streamsJS.RelPermalink }}"></script>
 	</head>
 	<!-- BaseOf -->
     <body>
         {{- partial "header.html" . -}}
-		<div id="flap">
-
-		</div>
+		
         <section id="content">
         	{{- block "main" . }}{{- end }}
 			<p>home / baseof.html</p>
