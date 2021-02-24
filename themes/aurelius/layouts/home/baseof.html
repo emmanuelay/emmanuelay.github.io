@@ -2,8 +2,6 @@
 <html lang="{{ .Site.Language.Lang }}">
 	<head>
     {{- partial "head.html" . -}}
-	{{ $streamsJS := resources.Get "js/streams.js" }}
-	<script type="text/javascript" src="{{ $streamsJS.RelPermalink }}"></script>
 	</head>
 	<!-- BaseOf -->
     <body>

@@ -18,5 +18,7 @@
 {{ with $authors }}
     <meta name="author" content="{{ delimit . "," }}">
 {{ end }}
+{{ $streamsJS := resources.Get "js/streams.js" }}
+	<script type="text/javascript" src="{{ $streamsJS.RelPermalink }}"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
 	<link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
