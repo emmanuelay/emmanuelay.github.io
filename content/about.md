@@ -7,8 +7,4 @@ menu: main
 weight: 1
 ---
 
-Welcome to my public notepad. This place is an outlet where I write about my different undertakings, which usually involves learning new skills, music, books, or programming. These are my streams of thought.
-
-### Who am I
-My name is Emmanuel. 
-Im an avid techie, and I've been since I got my first computer in the 80's - a Texas Instrument 99. Programming is and has always been my favorite creative outlet, its what I do for fun and also what I enjoy working with.
+Ut tempor magna pariatur enim ex ex Lorem Lorem sit ullamco id. Occaecat velit sint ipsum pariatur laboris minim adipisicing sint mollit commodo occaecat. Dolor sunt minim Lorem duis esse ea veniam consequat exercitation.
