@@ -12,6 +12,7 @@ window.onload = function() {
 
 function windowResize() {
 	canvas.width  = window.innerWidth;
+	
 };
 
 window.addEventListener('resize', windowResize);
@@ -21,6 +22,7 @@ function draw() {
 
 	var ctx = canvas.getContext("2d");
 	var width = canvas.width;
+	var height = canvas.height;
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 
 	ctx.fillStyle = "rgba(93, 95, 116, .5)";
@@ -29,19 +31,23 @@ function draw() {
 	var increase3 = .000195 + (8 * Math.PI / (width/2));
 	for (var i = 0; i < (width/2); i++) {
 
-		y1 = 30 * Math.sin(counter);
-		y2 = 20 * Math.cos(counter2);
-		y3 = 30 * Math.sin(counter3);
-		y = y1 + y2 + y3 / 2;
-		y0 = y3 / 2;
-		y4 = y1 + y3 / 2;
+		y1 = (height/6) * Math.sin(counter);
+		y2 = (height/8) * Math.cos(counter2);
+		y3 = (height/6) * Math.sin(counter3);
+		
+		r = y1 + y2 + y3 / 3;
+		r0 = y3 / 2;
+		r1 = y1 + y3 / 4;
+		r2 = y2 + y3 / 4;
 		
 		ctx.fillStyle = "rgba(93, 95, 116, .3)";
-		ctx.fillRect(i*4, 80, 1, y);
-		ctx.fillStyle = "rgba(93, 95, 116, .9)";
-		ctx.fillRect(width-(i*4), 80, 1, y0);
+		ctx.fillRect(i*4, height/2, 1, r);
 		ctx.fillStyle = "rgba(93, 95, 116, .6)";
-		ctx.fillRect((i*4), 80, 1, y4);
+		ctx.fillRect(1+width-(i*4), height/2, 1, r0);
+		ctx.fillStyle = "rgba(93, 95, 116, .4)";
+		ctx.fillRect(2+(i*4), height/2, 1, r1);
+		ctx.fillStyle = "rgba(93, 95, 116, .2)";
+		ctx.fillRect(3+(i*4), height/2, 1, r2);
 
 		counter += increase;
 		counter2 += increase2;
