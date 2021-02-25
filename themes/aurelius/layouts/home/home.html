@@ -1,9 +1,22 @@
 {{ define "main" }}
-<div>
+<section id="welcome">
 	<h1>{{ .Title }}</h1>
-</div>
-<div>
 	{{ .Content }}
+	<p>_default / list.html</p>
+</section>
+<section id="posts">
+	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+	{{ range $paginator.Pages }}
+	<div class="post">
+		<h2 class="post__title">
+		  <a href="{{ .Permalink }}">{{ .Title }}</a>
+		</h2>
+		<div class="post__summary">
+		  {{ .Summary }}
+		</div>
+	</div>
+	{{ end }}
+	{{- partial "paginator.html" . -}}
 	<p>home / home.html</p>
-</div>
+</section>
 {{ end }}

@@ -1,14 +1,9 @@
 ---
-title: "Home"
-author: "Emmanuel Ay"
+title: Emmanuels blog
+author: Emmanuel Ay
 weight: 1
 draft: false
 type: home
 ---
 
-Duis eu velit nulla enim voluptate. Do Lorem magna laboris quis. Deserunt ad nostrud duis aliquip voluptate commodo veniam sit eiusmod eu ea. Deserunt eu anim aliquip nisi et. Deserunt nostrud ea Lorem aliquip cupidatat eiusmod dolore incididunt anim est. Fugiat velit ut pariatur reprehenderit ea velit eu. Aute incididunt labore fugiat aliquip labore sint reprehenderit minim ullamco.
-
-## Content in the root
-
-Duis eu velit nulla enim voluptate. Do Lorem magna laboris quis. Deserunt ad nostrud duis aliquip voluptate commodo veniam sit eiusmod eu ea. Deserunt eu anim aliquip nisi et. Deserunt nostrud ea Lorem aliquip cupidatat eiusmod dolore incididunt anim est. Fugiat velit ut pariatur reprehenderit ea velit eu. Aute incididunt labore fugiat aliquip labore sint reprehenderit minim ullamco.
-
+Eu commodo anim proident eu excepteur proident ullamco. Labore ullamco pariatur amet do aute anim sint est qui cillum ex occaecat et. Nostrud excepteur esse dolor esse. Consectetur nisi cillum sunt ad deserunt.

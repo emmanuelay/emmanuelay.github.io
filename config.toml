@@ -4,6 +4,7 @@ title = "Streams of thought"
 disableHugoGeneratorInject = true
 theme = "aurelius"
 disableKinds = ["taxonomy", "term"]
+paginate = 10
 
 [params]
 	Author = "Emmanuel Ay"

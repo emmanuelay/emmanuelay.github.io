@@ -29,24 +29,9 @@ h1, h2, h3, h4, h5 {
 }
 
 
-section {
-	margin: 0;
-	padding: 2rem 6rem;
-
-	&#content {
-		padding-bottom: 10rem;
-		
-		h1, h2, h3, h4, h5 {
-			padding-top: 2.5rem;
-			padding-bottom: 1.5rem;
-		}
-	}	
-}
-
 .highlight {
 	pre {
-		padding: 2rem;
-		border-radius: .4rem;
+		padding: 3rem 6rem;
 	}
 }
 
