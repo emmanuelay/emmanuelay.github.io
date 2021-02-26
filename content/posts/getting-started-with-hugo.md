@@ -14,13 +14,11 @@ If you have experience from other content management systems you know that there
 
 In this article I will walk you through the basics of generating a website using nothing but Hugo and your favorite IDE. After completing this you should be able to continue into the more complicated concepts of Hugo by yourself. 
 
-## Getting started 
+## Installation and set up
 
 Prerequisites:
 * Unix-based OS (macOS preferred)
-* Homebrew package manager installed
-
-## Installation and set up
+* Homebrew package manager
 
 Start a terminal and install Hugo using Homebrew:
 
