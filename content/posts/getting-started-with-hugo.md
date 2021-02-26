@@ -3,17 +3,16 @@ date: 2021-02-01
 author: Emmanuel Ay
 draft: false
 title: Getting started with Hugo - the basics
-tags: hugo
+tags: ["hugo"]
 ---
 
 "Hugo is simple"... thats what I was told.
-Well it must be, I mean, if we are supposed to swap out neat wysiwyg, drag-and-drop, database-backed CMS'es for something more rudimentary the least we can expect is for it to be a lot simpler and easier to use.
-
-The problem is, Hugo __doesn't look__ simple.
+Well it must be, I mean, if we are to swap out wysiwyg, database-backed CMS'es for something more rudimentary the one thing I would expect is that the replacement is a lot simpler and easier to use. 
 
 <!--more-->
 
-I don't know about you, but there are lots of new software being released every day that begs for my attention. And I for one don't always have the luxury of time to learn completely new things from scratch. So until now, 2020, I haven't used Hugo.
+Initially Hugo seems more complicated than it is. I don't know why, but I suspect that the documentation plays a large part in that. But after tinkering with Hugo for a while and scratching the surface a bit - I think that Hugo lives up to the promise of static website generators. Its dead simple. At least when you've get a hang of the core concepts.
+
 # Getting started 
 
 Prerequisites:
@@ -54,5 +53,5 @@ my-site
 ```
 
 I will not walk you through each end every part of the structure of a Hugo-project, there are tons of tutorials for that. Instead I will take the "Hello world" approach and walk you through the bare minimums to generate a basic webpage using Hugo.
-I prefer to have my workspaces decluttered, go ahead and delete "archetypes", "data" and "static" from our "my-site" folder. 
+I prefer to have my workspaces decluttered, go ahead and delete "archetypes", "data" and "static" from our "my-site" folder. I will reintroduce them at a later stage when we've got the basics locked down.
 

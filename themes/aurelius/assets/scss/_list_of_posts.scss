@@ -30,5 +30,36 @@
 		padding-top: 8rem;
 		padding-bottom: 8rem;
 		border-bottom: 1px solid #fff;
+
+		&__title {
+			font-weight: 300;
+			font-size: 2.5rem;
+			padding-bottom: 0rem;
+		}
+		&__meta {
+			padding: 0rem 6rem;
+			color: rgba(0,0,0,.3);
+			font-size: 1.5rem;
+
+			&-date {
+				margin-right: 1rem;
+			}
+
+			&-tag {
+				display: none;
+			}
+
+			&-read {
+				color:rgba(0,0,0,.7);
+			}
+		}
+
+		&__summary {
+			color: rgba(0,0,0,.7);
+
+			strong {
+				font-weight: 600;
+			}
+		}
 	}
 }

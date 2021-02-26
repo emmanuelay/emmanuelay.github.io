@@ -3,7 +3,7 @@ date: 2021-02-10
 author: Emmanuel Ay
 draft: false
 title: Getting started with Hugo - Content and templates
-tags: hugo
+tags: ["hugo"]
 ---
 
 Content and templates are important.

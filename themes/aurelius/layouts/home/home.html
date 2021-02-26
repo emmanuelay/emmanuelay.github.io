@@ -9,8 +9,13 @@
 	{{ range $paginator.Pages }}
 	<div class="post">
 		<h2 class="post__title">
-		  <a href="{{ .Permalink }}">{{ .Title }}</a>
+		  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 		</h2>
+		<div class="post__meta">
+			<span class="post__meta-date">{{ .Date.Format "Jan 2, 2006" }}</span> 
+			{{ with .Params.tags }}<span class="post__meta-tag">{{ delimit . ", " }}</span>{{ end }}
+			<span class="post__meta-read">{{ math.Round (div (countwords .Content) 220.0) }} minutes</span>
+		</div>
 		<div class="post__summary">
 		  {{ .Summary }}
 		</div>
