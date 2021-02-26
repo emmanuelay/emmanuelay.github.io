@@ -1,10 +1,10 @@
 baseURL = "http://emmanuelay.se/"
 languageCode = "en-us"
 title = "Streams of thought"
-disableHugoGeneratorInject = true
 theme = "aurelius"
 disableKinds = ["taxonomy", "term"]
-paginate = 10
+disableHugoGeneratorInject = true
+paginate = 1
 
 [params]
 	Author = "Emmanuel Ay"

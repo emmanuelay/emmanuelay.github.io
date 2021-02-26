@@ -16,3 +16,6 @@ Currently there are the following types available:
 * articles
 * books
 * links
+
+* Box drawing
+https://en.wikipedia.org/wiki/Box-drawing_character
