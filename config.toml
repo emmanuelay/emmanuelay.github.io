@@ -5,6 +5,7 @@ theme = "aurelius"
 disableKinds = ["taxonomy", "term"]
 disableHugoGeneratorInject = true
 paginate = 1
+pygmentsCodeFences = true
 
 [params]
 	Author = "Emmanuel Ay"
