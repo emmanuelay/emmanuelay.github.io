@@ -107,10 +107,15 @@ This is the world.md file
 
 You've created the content that our site contains. In the next steps you are going to create the **templates**.
 
-Hugo has a templates concept, and it can optionally encapsulate templates into themes aswell.
-But for our example, I will not explain themes but just show you a basic template in the default template folder: **layouts**.
+## Add templates
 
-## Basic templating in Hugo: layouts and _default
+Hugo has a concept of templates that resembles Wordpress. 
+Templates are usually bundled into themes, but it is an optional construct.
+There are two ways of adding templates to your site: **layouts** or **themes**.
+
+I will explain themes at a later stage, but for this tutorial I will just show you add a template to the **layouts** folder.
+
+### Layouts folder
 
 The layouts folder has a special organization. 
 There is one directory that is mandatory for all Hugo-sites: **_default**, go ahead and create it.
@@ -131,7 +136,7 @@ my-site
 └- config.toml
 ```
 
-## baseof.html
+### baseof.html
 
 In baseof.html you should define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.
 
@@ -154,13 +159,15 @@ In baseof.html you should define the foundational elements of a HTML-page: docty
 </html>
 ```
 
+### single.html
+
 **single.html**
 ```html
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 ```
 
-## Site configuration - config.toml
+## Site configuration
 
 The **config.toml**-file located in the root of your project folder is where the global configuration of your site is located. This file contains the base URL along with a range of global settings for your site.
 

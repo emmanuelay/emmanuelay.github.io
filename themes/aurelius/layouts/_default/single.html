@@ -1,6 +1,13 @@
 {{ define "main" }}
-<section id="post">
+<section class="post">
 	<h1>{{ .Title }}</h1>
+	<div class="post__meta">
+		<p>
+			{{ .PublishDate.Format "January 2, 2006" }} by {{ .Params.author }} -
+			Estimated reading time: <strong>{{ .ReadingTime }} minutes</strong>
+		</p>	
+	</div>
+	{{ .TableOfContents }}
 	{{ .Content }}
 </section>
 <p>default / single.html</p>
