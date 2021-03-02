@@ -6,19 +6,19 @@ title: Getting started with Hugo - the basics
 tags: ["hugo"]
 ---
 
-I wrote this article because I wish somebody already had written it. Instead I had to spend a weekend to learn the basics of Hugo. Because initially - Hugo seems way more complicated than it actually is! I believe that the documentation plays a large part in that. After tinkering with Hugo for a while and grasping the core concepts - I think that Hugo lives up to the promise of static website generators: flexibility, simplicity and performance.
+I wrote this article because I wish somebody already had written it. 
+I had to spend a week to learn the basics of Hugo. Because initially - Hugo seems way more complicated than it actually is. I believe that the documentation plays a large part in that, since it doesnt offer a "hello world" tutorial. After tinkering with Hugo for another week and grasping the core concepts - I think that Hugo lives up to the promise of static website generators: flexibility, simplicity and performance.
 
 <!--more-->
 
-If you have experience from other content management systems you know that there are certain concepts that are somewhat universal, such as **templates** and **content**. In Hugo, these concepts are distorted under terms such as "archetypes", "pages", "themes" and "layouts". Im not a big fan of Wordpress, but I can tell there are conceptual overlaps and influences from it in Hugo.
+If you have experience from other content management systems you know that there are certain concepts that are somewhat universal, such as **templates** and **content**. In Hugo, these concepts are distorted under terms such as "archetypes", "pages", "themes" and "layouts". Im not a big fan of Wordpress, but I can tell there are conceptual overlaps and influences from it in Hugo. 
 
 In this article I will walk you through the basics of generating a website using nothing but Hugo and your favorite IDE. After completing this you should be able to continue into the more complicated concepts of Hugo by yourself. 
 
-## Installation and set up
+## Prerequisites & installation
 
-Prerequisites:
-* Unix-based OS (macOS preferred)
-* Homebrew package manager
+I use mac and Homebrew for package management and I assume you do too. 
+If you dont - just ensure you have the Hugo CLI installed and ready before skipping to the next step.
 
 Start a terminal and install Hugo using Homebrew:
 
@@ -27,6 +27,8 @@ brew install hugo
 ```
 
 This installs the Hugo CLI, which is all you need to generate websites. 
+
+## Create a new site
 
 Navigate to a suitable folder for your project,  and from there you should be able to initialize a Hugo-project using the Hugo CLI:
 
@@ -48,11 +50,11 @@ my-site
 └- config.toml
 ```
 
-## Remove the unneccessary
+## Remove unneccessary folders
 
-I will walk you through the bare minimum to generate a basic website, most of these folders are not neccessary for our needs.
+I will walk you through the bare minimum to generate a basic website and most of the folders that come with the "new site" command are not neccessary for our needs.
 
-Go ahead and delete the following folders **archetypes**, **data**, **themes**, and **static** from our "my-site" folder. You should end up with this:
+Go ahead and delete: **archetypes**, **data**, **themes**, and **static** from our "my-site" folder. You should end up with this:
 
 ```sh
 my-site
@@ -66,7 +68,7 @@ From here its much easier to explain the basics and start building a website.
 
 ## Add content
 
-Go ahead and create two markdown files in the **content** folder:
+Go ahead and create two markdown (.md) files in the **content** folder:
 
 ```sh
 my-site
@@ -78,7 +80,7 @@ my-site
 └- config.toml
 ```
 
-Add the following content to **hello.md**:
+Now add the following content to **hello.md**:
 
 ```sh
 ---
@@ -107,13 +109,10 @@ This is the world.md file
 
 You've created the content that our site contains. In the next steps you are going to create the **templates**.
 
-## Add templates
+## Create templates
 
-Hugo has a concept of templates that resembles Wordpress. 
-Templates are usually bundled into themes, but it is an optional construct.
-There are two ways of adding templates to your site: **layouts** or **themes**.
-
-I will explain themes at a later stage, but for this tutorial I will just show you add a template to the **layouts** folder.
+Templates in Hugo are usually bundled into themes, but it is an optional construct.
+I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the **layouts** folder.
 
 ### Layouts folder
 
