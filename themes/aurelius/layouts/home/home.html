@@ -1,22 +1,22 @@
 {{ define "main" }}
-<section id="welcome">
+<section class="welcome">
 	<h1>{{ .Title }}</h1>
 	{{ .Content }}
 	<p>_default / list.html</p>
 </section>
-<section id="posts">
+<section class="posts">
 	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
 	{{ range $paginator.Pages }}
-	<div class="post">
-		<h2 class="post__title">
+	<div class="posts-item">
+		<h2 class="posts-item__title">
 		  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 		</h2>
-		<div class="post__meta">
-			<span class="post__meta-date">{{ .Date.Format "Jan 2, 2006" }}</span> 
-			{{ with .Params.tags }}<span class="post__meta-tag">{{ delimit . ", " }}</span>{{ end }}
-			<span class="post__meta-read">{{ math.Round (div (countwords .Content) 220.0) }} minutes</span>
+		<div class="posts-item__meta">
+			<span class="posts-item__meta-date">{{ .Date.Format "Jan 2, 2006" }}</span> 
+			{{ with .Params.tags }}<span class="posts-item__meta-tag">{{ delimit . ", " }}</span>{{ end }}
+			<span class="posts-item__meta-read">{{ math.Round (div (countwords .Content) 220.0) }} minutes</span>
 		</div>
-		<div class="post__summary">
+		<div class="posts-item__summary">
 		  {{ .Summary }}
 		</div>
 	</div>
