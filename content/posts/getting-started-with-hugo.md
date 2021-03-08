@@ -7,30 +7,31 @@ tags: ["hugo"]
 ---
 
 I wrote this article because I wish somebody already had written it. 
-I had to spend a week to learn the basics of Hugo. Because initially - Hugo seems way more complicated than it actually is. I believe that the documentation plays a large part in that, since it doesnt offer a "hello world" tutorial. After tinkering with Hugo for another week and grasping the core concepts - I think that Hugo lives up to the promise of static website generators: flexibility, simplicity and performance.
+For a total beginner, Hugo seems way more complicated than it actually is. In this article I will explain the core concepts you need to know of to get a basic site up and running - within minutes.
 
 <!--more-->
 
-If you have experience from other content management systems you know that there are certain concepts that are somewhat universal, such as **templates** and **content**. In Hugo, these concepts are distorted under terms such as "archetypes", "pages", "themes" and "layouts". Im not a big fan of Wordpress, but I can tell there are conceptual overlaps and influences from it in Hugo. 
+Static website generators offer flexibility and performance. The trade-off is ofcourse ease of use.
+If you have experience from common content management systems you know that there are certain concepts that are somewhat universal, such as **templates** and **content**. In Hugo, these concepts are a bit distorted under terms such as "archetypes", "pages", "themes" and "layouts". Im not a big fan of Wordpress, but I can tell there are conceptual overlaps and influences from it in Hugo. 
 
-In this article I will walk you through the basics of generating a website using nothing but Hugo and your favorite IDE. After completing this you should be able to continue into the more complicated concepts of Hugo by yourself. 
+In this article I will walk you through the basics of generating a website using nothing but Hugo and your favorite texteditor. After completing this you should be able to continue into the more complicated concepts of Hugo by yourself. 
 
 ## Prerequisites & installation
 
 I use mac and Homebrew for package management and I assume you do too. 
 If you dont - just ensure you have the Hugo CLI installed and ready before skipping to the next step.
 
-Start a terminal and install Hugo using Homebrew:
+If you have a Mac, fire up a terminal and install Hugo using Homebrew:
 
 ```sh
 brew install hugo
 ```
 
-This installs the Hugo CLI, which is all you need to generate websites. 
+This installs the Hugo CLI, which is actually all you need to generate websites. 
 
 ## Create a new site
 
-Navigate to a suitable folder for your project,  and from there you should be able to initialize a Hugo-project using the Hugo CLI:
+Navigate to a suitable folder for your project, and from there you should be able to initialize a Hugo-project using the Hugo CLI:
 
 ```sh
 hugo new site my-site

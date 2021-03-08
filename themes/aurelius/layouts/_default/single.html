@@ -8,7 +8,13 @@
 		</p>	
 	</div>
 	{{ .TableOfContents }}
-	{{ .Content }}
+	<span class="intro">
+		{{ .Summary  }}
+	</span>
+	<span class="content">
+		{{ $body := replace .Content .Summary "" }}
+		{{ $body | emojify | safeHTML }}	
+	</span>
 </section>
 <p>default / single.html</p>
 {{ end }}

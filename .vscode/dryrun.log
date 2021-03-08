@@ -1,6 +1,5 @@
-make server --dry-run --keep-going --print-directory
+make server --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/emmanuel/Documents/CODE/EMMANUELAY.SE'
 hugo server -D --ignoreCache --disableFastRender --noHTTPCache --watch --minify
- 
 make: Leaving directory `/Users/emmanuel/Documents/CODE/EMMANUELAY.SE'
  
