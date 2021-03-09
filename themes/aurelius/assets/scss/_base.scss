@@ -27,3 +27,21 @@ h1, h2, h3, h4, h5 {
 	font-size: 3rem;
 }
 
+.container {
+	@media (max-width: 576px) {
+		width: 100%;
+	}
+	@media (min-width: 577px) and (max-width: 767px) {
+		width: 540px;
+	}
+	@media (min-width: 766px) and (max-width: 991px) {
+		width: 720px;
+	}
+	@media (min-width: 992px) and (max-width: 1200px) {
+		width: 960px;
+	}
+	@media (min-width: 1200px)  {
+		width: 1140px;
+	}
+
+}
