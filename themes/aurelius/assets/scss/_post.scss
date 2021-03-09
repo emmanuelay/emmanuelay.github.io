@@ -34,12 +34,12 @@
 		margin-bottom: 2.5rem;
 
 		strong {
-			font-weight: 600;
+			font-weight: 700;
 		}
 	}
 
 	.intro {
-		font-weight: 600;
+		font-weight: 700;
 	}
 
 	ul {
@@ -59,11 +59,17 @@
 
 	#TableOfContents {
 		padding: 2rem 0rem;
-		font-size: 1.5rem;
-		line-height: 2.5rem;
+		font-size: 1.6rem;
+		font-weight: 300;
+		line-height: 3rem;
 
 		a {
-			color: #000;
+			text-decoration: none;
+			color: #c0f;
+
+			&:hover {
+				color: #000;
+			}
 		}		
 
 		ul:first-child {
