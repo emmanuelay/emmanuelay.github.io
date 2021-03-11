@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
  
 
-# Make data base, printed on Tue Mar  9 08:16:46 2021
+# Make data base, printed on Thu Mar 11 11:24:02 2021
 
 # Variables
 
@@ -41,7 +41,7 @@ VSCODE_NLS_CONFIG = {"locale":"sv","availableLanguages":{},"_languagePackSupport
 # environment
 _ = /usr/bin/make
 # environment
-VSCODE_PID = 1643
+VSCODE_PID = 4573
 # makefile (from `makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # environment
@@ -57,7 +57,7 @@ __CFBundleIdentifier = com.apple.Terminal
 # environment
 rvm_proxy = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/vr/q9_z0lx552x4ggzzykkdsxyr0000gn/T/vscode-ipc-c35b69e8-a263-41d4-b2e4-15b93d505850.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/vr/q9_z0lx552x4ggzzykkdsxyr0000gn/T/vscode-ipc-9d386d16-1c56-4cdd-9003-906be4a49eef.sock
 # environment
 rvm_pretty_print_flag = 
 # environment
@@ -83,7 +83,8 @@ rvm_alias_expanded =
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.hIhcWCfojE/Listeners
+ 
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.BNEeQXabiD/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -141,7 +142,7 @@ USER = emmanuel
 # makefile
 .DEFAULT_GOAL := hello
 # environment
-TERM_SESSION_ID = 09E5D31F-3DBC-4440-9F7D-176594752E18
+TERM_SESSION_ID = 2F9A362B-E437-4A6D-830C-66DEB39D88B2
 # environment
 rvm_version = 1.29.9 (latest)
 # environment
@@ -246,6 +247,7 @@ all:
 
 # Not a target:
 .SUFFIXES:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -302,6 +304,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Mar  9 08:16:46 2021
+# Finished Make data base on Thu Mar 11 11:24:02 2021
 
  
