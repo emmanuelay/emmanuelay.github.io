@@ -18,3 +18,5 @@
 public/
 
 resources/_gen
+
+.vscode
