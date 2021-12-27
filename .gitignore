@@ -20,3 +20,4 @@ public/
 resources/_gen
 
 .vscode/*
+.hugo_build.lock
