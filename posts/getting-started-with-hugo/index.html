@@ -26,7 +26,7 @@ For a total beginner, Hugo seems way more complicated than it actually is. In th
 <div class=post__meta>
 <p>
 February 1, 2021 by Emmanuel Ay -
-Estimated reading time: <strong>5 minutes</strong>
+Estimated reading time: <strong>6 minutes</strong>
 </p>
 </div>
 <nav id=TableOfContents>
@@ -35,13 +35,15 @@ Estimated reading time: <strong>5 minutes</strong>
 <li><a href=#create-a-new-site>Create a new site</a></li>
 <li><a href=#remove-unneccessary-folders>Remove unneccessary folders</a></li>
 <li><a href=#add-content>Add content</a></li>
-<li><a href=#create-templates>Create templates</a>
+<li><a href=#themes--templates>Themes & templates</a>
 <ul>
 <li><a href=#layouts-folder>Layouts folder</a></li>
 <li><a href=#baseofhtml>baseof.html</a></li>
 <li><a href=#singlehtml>single.html</a></li>
+<li><a href=#indexhtml>index.html</a></li>
 </ul>
 </li>
+<li><a href=#generate-it>Generate it</a></li>
 <li><a href=#site-configuration>Site configuration</a></li>
 </ul>
 </nav>
@@ -73,26 +75,38 @@ If you dont - just ensure you have the Hugo CLI installed and ready before skipp
 ├─ themes
 └- config.toml
 </code></pre></div><h2 id=remove-unneccessary-folders>Remove unneccessary folders</h2>
-<p>I will walk you through the bare minimum to generate a basic website. Most of the folders that come with the &ldquo;new site&rdquo; command are not neccessary for our needs.</p>
+<p>I will walk you through the bare minimums to generate a basic website. Most of the folders that come with the &ldquo;new site&rdquo; command are not neccessary for our needs.</p>
 <p>Go ahead and delete: <strong>archetypes</strong>, <strong>data</strong>, <strong>themes</strong>, and <strong>static</strong> from our &ldquo;my-site&rdquo; folder. You should end up with this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ content
 ├─ layout
 └- config.toml
-</code></pre></div><p>From here its much easier to explain the basics and start building a website.</p>
+</code></pre></div><p>From here its much easier to explain the basics of building a website with Hugo.</p>
 <h2 id=add-content>Add content</h2>
-<p>Go ahead and create two markdown (.md) files in the <strong>content</strong> folder:</p>
+<p>Go ahead and create three markdown (.md) files in the <strong>content</strong> folder:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ content
+|  ├─ _index.md
 │  ├─ hello.md
 │  └- world.md
 ├─ layout
 └- config.toml
-</code></pre></div><p>Now add the following content to <strong>hello.md</strong>:</p>
+</code></pre></div><p>Now add the following content to <strong>_index.md</strong>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>---
+date: 2021-02-26
+author: Your name
+title: Home
+menu: main
+draft: <span style=color:#8be9fd;font-style:italic>false</span>
+---
+
+This is the _index.md file, which is the root page of your site.
+</code></pre></div><p>And add the following content to <strong>hello.md</strong>:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>---
 date: 2021-02-26
 author: Your name
 title: Hello
+menu: main
 draft: <span style=color:#8be9fd;font-style:italic>false</span>
 ---
 
@@ -102,31 +116,41 @@ This is the hello.md file
 date: 2021-02-26
 author: Your name
 title: World
+menu: main
 draft: <span style=color:#8be9fd;font-style:italic>false</span>
 ---
 
 This is the world.md file
-</code></pre></div><p>You&rsquo;ve created the content that our site contains. In the next steps you are going to create the <strong>templates</strong>.</p>
-<h2 id=create-templates>Create templates</h2>
-<p>Templates in Hugo are usually bundled into themes. Themes are usually located in the <code>themes</code> folder, but we deleted in order to simplify this tutorial. Truth is, themes are an optional construct. You can use the layout folder directly.</p>
-<p>I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the <strong>layouts</strong> folder.</p>
+</code></pre></div><p>You&rsquo;ve created the content that your site contains.
+The metadata in the top of the markdown files is called <code>frontmatter</code> and Hugo has a <a href=https://gohugo.io/content-management/front-matter/>range of variables</a> that lets you control different aspects of your content.</p>
+<p>In the content defined above, there are two notable frontmatter tags that deserves an explanation: <code>menu</code> and <code>draft</code>.
+Menu defines which menu the content belongs to. I have used <code>main</code> just to explain the concept, but you could essentially call it whatever you like.
+Draft is a boolean which controls the state of the content, if its set to <code>true</code> - the content wont be rendered.</p>
+<p>In the next steps you are going to create a template to render this content with.</p>
+<h2 id=themes--templates>Themes & templates</h2>
+<p>Templates in Hugo are usually bundled into themes. Themes are located in the root <code>themes</code> folder of your project. But for the sake of simplicity we deleted that folder since it is an optional construct.</p>
+<p>Instead, we will use the <strong>layout</strong> folder to contain our templates.</p>
+<p>I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content.</p>
 <h3 id=layouts-folder>Layouts folder</h3>
-<p>The layouts folder has a special organization.
-There is one directory that is mandatory for all Hugo-sites: <code>_default</code>, go ahead and create it.
-In this folder, there are two files that are mandatory for any Hugo-site: <code>baseof.html</code> and <code>single.html</code>.</p>
+<p>The layouts folder has a special organization.</p>
+<p>In it there is one folder that is mandatory for all Hugo-sites: <code>_default</code>, go ahead and create it.
+In this folder, there are two files that are needed: <code>baseof.html</code> and <code>single.html</code>.
+And the last template file we need to create should be located in the root of your layout folder, it is for the home page of your site: <code>index.html</code>.</p>
 <p>You should have a folder structure that looks like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ content
+│  ├─ _index.md
 │  ├─ hello.md
 │  └- world.md
 ├─ resources
 ├─ layout
-│  └- _default
-│    ├─ baseof.html
-│    └- single.html
+│  ├- _default
+│  │ ├─ baseof.html
+│  │ └- single.html
+│  └- index.html
 └- config.toml
 </code></pre></div><h3 id=baseofhtml>baseof.html</h3>
-<p>In baseof.html you define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.</p>
+<p>In baseof.html you usually put the foundational elements of a HTML-page: <code>doctype</code>, <code>html</code>, etc.</p>
 <p><strong>baseof.html</strong></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#ff79c6>doctype</span> <span style=color:#50fa7b>html</span>&gt;
 &lt;<span style=color:#ff79c6>html</span>&gt;
@@ -136,18 +160,25 @@ In this folder, there are two files that are mandatory for any Hugo-site: <code>
 &lt;<span style=color:#ff79c6>body</span>&gt;
 	&lt;<span style=color:#ff79c6>nav</span>&gt;
 		&lt;<span style=color:#ff79c6>ul</span>&gt;
-			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;hello&#34;</span>&gt;Hello&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
-			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;world&#34;</span>&gt;World&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
+			{{ range .Site.Menus.main }}
+			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;{{ .URL }}&#34;</span>&gt;{{ .Name }}&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
+			{{ end }}
 		&lt;/<span style=color:#ff79c6>ul</span>&gt;
 	&lt;/<span style=color:#ff79c6>nav</span>&gt;
 	{{ template &#34;main&#34; . }}
 &lt;/<span style=color:#ff79c6>body</span>&gt;
 &lt;/<span style=color:#ff79c6>html</span>&gt;
-</code></pre></div><p>There are two template tags present in this file. As you can see they are surrounded with double curly brackets. These commands are evaluated when Hugo generates the site.</p>
-<p>The first tag <code>{{ .Site.Title }}</code> is replaced with the title of your site. The value is retrieved from your site configuration file.</p>
-<p>The second tag is more interesting.
-It is a placeholder for a <em>templated area</em>, which we have named &ldquo;main&rdquo;. You can call it whatever you like. The single dot <code>.</code> after <code>"main"</code> is a parameter that tells Hugo to pass down the Page object to the templated area.</p>
+</code></pre></div><p>There are three template commands present in this file. As you can see they are surrounded with <code>{{</code> double curly brackets <code>}}</code>. These commands are evaluated when Hugo generates the site.</p>
+<h4 id=variable>Variable</h4>
+<p>The first tag <code>{{ .Site.Title }}</code> is a variable, which is replaced with the title of your site. The value is retrieved from your site configuration file.</p>
+<h4 id=range-iterator>Range iterator</h4>
+<p>The second tag is a range iterator.
+It iterates over the items in the <code>.Site.Menus.main</code> collection and renders the encapsulated <code>li</code>-element block.</p>
+<p>Remember the <code>menu</code> frontmatter tag that was included in all content files? This is where its put to use, each piece of content that has the frontmatter tag <code>main</code> is included in the <code>.Site.Menus.main</code> collection.</p>
+<h4 id=templated-area>Templated area</h4>
+<p>The third tag is a placeholder for a <em>templated area</em>, which we have named &ldquo;main&rdquo;. You can call it whatever you like. The single dot <code>.</code> after <code>"main"</code> is a parameter that tells Hugo to pass down the current page context to the templated area.</p>
 <h3 id=singlehtml>single.html</h3>
+<p>Lets move on to the first actual template.</p>
 <p><strong>single.html</strong></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
 
@@ -156,7 +187,21 @@ It is a placeholder for a <em>templated area</em>, which we have named &ldquo;ma
 
 {{ end }}
 </code></pre></div><p>In the single item template we begin by defining which templated areas this template contains.</p>
-<p>In our <code>baseof.html</code> file we only had one templated area (called <code>main</code>) and we also passed down the Page context using the dot command.</p>
+<p>In our <code>baseof.html</code> file we only had one templated area (called <code>main</code>) and we also passed down the Page object using the dot command. That is how the tag <code>{{ .Title }}</code> in this template gets its value.</p>
+<h3 id=indexhtml>index.html</h3>
+<p><strong>index.html</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
+
+	&lt;<span style=color:#ff79c6>h1</span>&gt;{{ .Title }}&lt;/<span style=color:#ff79c6>h1</span>&gt;
+	{{ .Content }}
+
+{{ end }}
+</code></pre></div><p>The index.html template relies on the same principles as the single.html template.
+The reason that we separate them is to be able to have different templates for the home page and content pages.</p>
+<h2 id=generate-it>Generate it</h2>
+<p>To try your site out, run the following command the root of your <code>new-site</code> folder:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>hugo server
+</code></pre></div><p>..and then open up a browser and navigate to the URL that the command returns (usually something like <code>http://localhost:1313/</code>)</p>
 <h2 id=site-configuration>Site configuration</h2>
 <p>The <strong>config.toml</strong>-file located in the root of your project folder is where the global configuration of your site is located. This file contains the configuration of your site.
 The default <strong>config.toml</strong>-file contains the following basic content:</p>
