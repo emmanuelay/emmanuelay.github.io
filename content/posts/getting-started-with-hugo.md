@@ -66,7 +66,7 @@ my-site
 
 From here its much easier to explain the basics of building a website with Hugo.
 
-## Add content
+## Content
 
 Go ahead and create three markdown (.md) files in the **content** folder:
 
@@ -80,6 +80,7 @@ my-site
 └- config.toml
 ```
 
+### _index.md
 Now add the following content to **_index.md**:
 
 ```sh
@@ -94,6 +95,8 @@ draft: false
 This is the _index.md file, which is the root page of your site.
 ```
 
+### hello.md 
+
 And add the following content to **hello.md**:
 
 ```sh
@@ -107,6 +110,9 @@ draft: false
 
 This is the hello.md file
 ```
+
+### world.md
+
 ..and this to the **world.md** file:
 
 ```sh
@@ -154,7 +160,6 @@ my-site
 │  ├─ _index.md
 │  ├─ hello.md
 │  └- world.md
-├─ resources
 ├─ layout
 │  ├- _default
 │  │ ├─ baseof.html
@@ -167,7 +172,6 @@ my-site
 
 In baseof.html you usually put the foundational elements of a HTML-page: `doctype`, `html`, etc.
 
-**baseof.html**
 ```html
 <doctype html>
 <html>
@@ -189,23 +193,25 @@ In baseof.html you usually put the foundational elements of a HTML-page: `doctyp
 
 There are three template commands present in this file. As you can see they are surrounded with `{{` double curly brackets `}}`. These commands are evaluated when Hugo generates the site.
 
-#### Variable
+**Variable**
+
 The first tag `{{ .Site.Title }}` is a variable, which is replaced with the title of your site. The value is retrieved from your site configuration file. 
 
-#### Range iterator
+**Range iterator**
+
 The second tag is a range iterator. 
 It iterates over the items in the `.Site.Menus.main` collection and renders the encapsulated `li`-element block.
 
 Remember the `menu` frontmatter tag that was included in all content files? This is where its put to use, each piece of content that has the frontmatter tag `main` is included in the `.Site.Menus.main` collection.
 
-#### Templated area
+**Templated area**
+
 The third tag is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that  tells Hugo to pass down the current page context to the templated area.
 
 ### single.html
 
 Lets move on to the first actual template. 
 
-**single.html**
 ```html
 {{ define "main" }}
 
@@ -221,7 +227,6 @@ In our `baseof.html` file we only had one templated area (called `main`) and we 
 
 ### index.html
 
-**index.html**
 ```html
 {{ define "main" }}
 
@@ -234,42 +239,78 @@ In our `baseof.html` file we only had one templated area (called `main`) and we 
 The index.html template relies on the same principles as the single.html template. 
 The reason that we separate them is to be able to have different templates for the home page and content pages.
 
-## Generate it
-
-To try your site out, run the following command the root of your `new-site` folder:
-```sh
-hugo server
-```
-
-..and then open up a browser and navigate to the URL that the command returns (usually something like `http://localhost:1313/`)
-
-
 ## Site configuration
 
 The **config.toml**-file located in the root of your project folder is where the global configuration of your site is located. This file contains the configuration of your site.
-The default **config.toml**-file contains the following basic content:
-
-```toml
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-```
-
-You can use this file to hold global content, such as copyright, author information, key words etc.
-
-For example, if you add the following to the `config.toml` file:
+Besides title and locale, it controls how your site is rendered.
+By default, Hugo assumes you want to render RSS and sitemap with your site. Disable it by using the `disableKinds` parameter:
 
 ```toml
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 
-[params]
-	Author = "Your name"
+// Add this to your file 
+disableKinds = ["rss", "sitemap"]
 ```
 
-..the values in the `params` block are available in your templates using:
 
-```html
-{{ .Site.Params.Author }}
+## Generating a site
+
+You're now ready to start generating your site.
+
+To try your site out, run the following command the root of your `new-site` folder:
+```sh
+hugo 
 ```
+
+..the site is now generated and available in the `public` folder:
+```sh
+my-site
+├─ content
+│  └- ...
+├─ layout
+│  └- ...
+├─ public
+│  ├- index.html
+│  │ ├─ hello
+│  │ │ └- index.html
+│  │ └- world
+│  │ │ └- index.html
+│  └- index.html
+└- config.toml
+```
+
+To try the site out locally, Hugo has a development server you can use:
+
+```sh
+hugo server
+```
+..which will show you the build process and start the development server:
+```sh 
+Start building sites … 
+hugo v0.91.0+extended darwin/amd64 BuildDate=unknown
+
+                   | EN  
+-------------------+-----
+  Pages            |  4  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     |  0  
+  Processed images |  0  
+  Aliases          |  0  
+  Sitemaps         |  1  
+  Cleaned          |  0  
+
+Built in 5 ms
+Watching for changes in /Users/.../{content,layouts}
+Watching for config changes in /Users/.../config.toml
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
+Open up a browser and navigate to the URL that the command returns (usually something like `http://localhost:1313/`)
+
