@@ -45,6 +45,7 @@
 	}
 
 	#TableOfContents {
+		display: none;
 		padding: 2rem 0rem;
 		font-size: 1.6rem;
 		font-weight: 300;
@@ -52,7 +53,7 @@
 
 		a {
 			text-decoration: none;
-			color: #c0f;
+			color: $link-color;
 
 			&:hover {
 				color: #000;

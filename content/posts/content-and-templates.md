@@ -1,7 +1,7 @@
 ---
 date: 2021-02-10
 author: Emmanuel Ay
-draft: false
+draft: true
 title: Getting started with Hugo - Content and templates
 tags: ["hugo"]
 ---
