@@ -53,7 +53,7 @@ my-site
 
 ## Remove unneccessary folders
 
-I will walk you through the bare minimum to generate a basic website. Most of the folders that come with the "new site" command are not neccessary for our needs.
+I will walk you through the bare minimums to generate a basic website. Most of the folders that come with the "new site" command are not neccessary for our needs.
 
 Go ahead and delete: **archetypes**, **data**, **themes**, and **static** from our "my-site" folder. You should end up with this:
 
@@ -64,28 +64,44 @@ my-site
 └- config.toml
 ```
 
-From here its much easier to explain the basics and start building a website.
+From here its much easier to explain the basics of building a website with Hugo.
 
 ## Add content
 
-Go ahead and create two markdown (.md) files in the **content** folder:
+Go ahead and create three markdown (.md) files in the **content** folder:
 
 ```sh
 my-site
 ├─ content
+|  ├─ _index.md
 │  ├─ hello.md
 │  └- world.md
 ├─ layout
 └- config.toml
 ```
 
-Now add the following content to **hello.md**:
+Now add the following content to **_index.md**:
+
+```sh
+---
+date: 2021-02-26
+author: Your name
+title: Home
+menu: main
+draft: false
+---
+
+This is the _index.md file, which is the root page of your site.
+```
+
+And add the following content to **hello.md**:
 
 ```sh
 ---
 date: 2021-02-26
 author: Your name
 title: Hello
+menu: main
 draft: false
 ---
 
@@ -98,44 +114,58 @@ This is the hello.md file
 date: 2021-02-26
 author: Your name
 title: World
+menu: main
 draft: false
 ---
 
 This is the world.md file
 ```
 
-You've created the content that our site contains. In the next steps you are going to create the **templates**.
+You've created the content that your site contains. 
+The metadata in the top of the markdown files is called `frontmatter` and Hugo has a [range of variables](https://gohugo.io/content-management/front-matter/) that lets you control different aspects of your content. 
 
-## Create templates
+In the content defined above, there are two notable frontmatter tags that deserves an explanation: `menu` and `draft`.
+Menu defines which menu the content belongs to. I have used `main` just to explain the concept, but you could essentially call it whatever you like. 
+Draft is a boolean which controls the state of the content, if its set to `true` - the content wont be rendered.
 
-Templates in Hugo are usually bundled into themes. Themes are usually located in the `themes` folder, but we deleted in order to simplify this tutorial. Truth is, themes are an optional construct. You can use the layout folder directly.
+In the next steps you are going to create a template to render this content with.
 
-I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the **layouts** folder.
+## Themes & templates
+
+Templates in Hugo are usually bundled into themes. Themes are located in the root `themes` folder of your project. But for the sake of simplicity we deleted that folder since it is an optional construct. 
+
+Instead, we will use the **layout** folder to contain our templates.
+
+I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. 
 
 ### Layouts folder
 
 The layouts folder has a special organization. 
-There is one directory that is mandatory for all Hugo-sites: `_default`, go ahead and create it.
-In this folder, there are two files that are mandatory for any Hugo-site: `baseof.html` and `single.html`.
+
+In it there is one folder that is mandatory for all Hugo-sites: `_default`, go ahead and create it.
+In this folder, there are two files that are needed: `baseof.html` and `single.html`.
+And the last template file we need to create should be located in the root of your layout folder, it is for the home page of your site: `index.html`.
 
 You should have a folder structure that looks like this:
 
 ```sh
 my-site
 ├─ content
+│  ├─ _index.md
 │  ├─ hello.md
 │  └- world.md
 ├─ resources
 ├─ layout
-│  └- _default
-│    ├─ baseof.html
-│    └- single.html
+│  ├- _default
+│  │ ├─ baseof.html
+│  │ └- single.html
+│  └- index.html
 └- config.toml
 ```
 
 ### baseof.html
 
-In baseof.html you define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.
+In baseof.html you usually put the foundational elements of a HTML-page: `doctype`, `html`, etc.
 
 **baseof.html**
 ```html
@@ -147,8 +177,9 @@ In baseof.html you define the foundational elements of a HTML-page: doctype, htm
 <body>
 	<nav>
 		<ul>
-			<li><a href="hello">Hello</a></li>
-			<li><a href="world">World</a></li>
+			{{ range .Site.Menus.main }}
+			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+			{{ end }}
 		</ul>
 	</nav>
 	{{ template "main" . }}
@@ -156,14 +187,23 @@ In baseof.html you define the foundational elements of a HTML-page: doctype, htm
 </html>
 ```
 
-There are two template tags present in this file. As you can see they are surrounded with double curly brackets. These commands are evaluated when Hugo generates the site.
+There are three template commands present in this file. As you can see they are surrounded with `{{` double curly brackets `}}`. These commands are evaluated when Hugo generates the site.
 
-The first tag `{{ .Site.Title }}` is replaced with the title of your site. The value is retrieved from your site configuration file. 
+#### Variable
+The first tag `{{ .Site.Title }}` is a variable, which is replaced with the title of your site. The value is retrieved from your site configuration file. 
 
-The second tag is more interesting. 
-It is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that  tells Hugo to pass down the Page object to the templated area.
+#### Range iterator
+The second tag is a range iterator. 
+It iterates over the items in the `.Site.Menus.main` collection and renders the encapsulated `li`-element block.
+
+Remember the `menu` frontmatter tag that was included in all content files? This is where its put to use, each piece of content that has the frontmatter tag `main` is included in the `.Site.Menus.main` collection.
+
+#### Templated area
+The third tag is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that  tells Hugo to pass down the current page context to the templated area.
 
 ### single.html
+
+Lets move on to the first actual template. 
 
 **single.html**
 ```html
@@ -177,7 +217,32 @@ It is a placeholder for a *templated area*, which we have named "main". You can 
 
 In the single item template we begin by defining which templated areas this template contains.
 
-In our `baseof.html` file we only had one templated area (called `main`) and we also passed down the Page context using the dot command.
+In our `baseof.html` file we only had one templated area (called `main`) and we also passed down the Page object using the dot command. That is how the tag `{{ .Title }}` in this template gets its value.
+
+### index.html
+
+**index.html**
+```html
+{{ define "main" }}
+
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
+
+{{ end }}
+```
+
+The index.html template relies on the same principles as the single.html template. 
+The reason that we separate them is to be able to have different templates for the home page and content pages.
+
+## Generate it
+
+To try your site out, run the following command the root of your `new-site` folder:
+```sh
+hugo server
+```
+
+..and then open up a browser and navigate to the URL that the command returns (usually something like `http://localhost:1313/`)
+
 
 ## Site configuration
 
