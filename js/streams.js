@@ -7,7 +7,7 @@ var fps = 60;
 window.onload = function() {
 	canvas = document.getElementById("flap");
 	canvas.width  = window.innerWidth;
-	draw();
+	// draw();
 };
 
 function windowResize() {
