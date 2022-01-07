@@ -18,7 +18,7 @@ In this article I will walk you through the basics of generating a website using
 
 ## Prerequisites & installation
 
-I use mac and Homebrew for package management and I assume you do too. 
+I use mac and [Homebrew](https://brew.sh/) for package management and I assume you do too. 
 If you dont - just ensure you have the Hugo CLI installed and ready before skipping to the next step.
 
 If you have a Mac, fire up a terminal and install Hugo using Homebrew:
@@ -37,15 +37,15 @@ Navigate to a suitable folder for your project, and from there you should be abl
 hugo new site my-site
 ```
 
-This creates the "my-site" folder and sets up the recommended folder structure for a Hugo site. Its quite a handful:
+This creates the "my-site" folder and sets up the recommended folder structure for a Hugo site:
 
 ```sh
 my-site
 ├─ archetypes
+│ └- default.md
 ├─ content
 ├─ data
 ├─ layouts
-├─ resources
 ├─ static
 ├─ themes
 └- config.toml
@@ -53,14 +53,13 @@ my-site
 
 ## Remove unneccessary folders
 
-I will walk you through the bare minimum to generate a basic website and most of the folders that come with the "new site" command are not neccessary for our needs.
+I will walk you through the bare minimum to generate a basic website. Most of the folders that come with the "new site" command are not neccessary for our needs.
 
 Go ahead and delete: **archetypes**, **data**, **themes**, and **static** from our "my-site" folder. You should end up with this:
 
 ```sh
 my-site
 ├─ content
-├─ resources
 ├─ layout
 └- config.toml
 ```
@@ -76,7 +75,6 @@ my-site
 ├─ content
 │  ├─ hello.md
 │  └- world.md
-├─ resources
 ├─ layout
 └- config.toml
 ```
@@ -91,7 +89,6 @@ title: Hello
 draft: false
 ---
 
-# Hello
 This is the hello.md file
 ```
 ..and this to the **world.md** file:
@@ -104,7 +101,6 @@ title: World
 draft: false
 ---
 
-# World
 This is the world.md file
 ```
 
@@ -112,14 +108,15 @@ You've created the content that our site contains. In the next steps you are goi
 
 ## Create templates
 
-Templates in Hugo are usually bundled into themes, but it is an optional construct.
+Templates in Hugo are usually bundled into themes. Themes are usually located in the `themes` folder, but we deleted in order to simplify this tutorial. Truth is, themes are an optional construct. You can use the layout folder directly.
+
 I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the **layouts** folder.
 
 ### Layouts folder
 
 The layouts folder has a special organization. 
-There is one directory that is mandatory for all Hugo-sites: **_default**, go ahead and create it.
-In this folder, there are two files I consider mandatory for any Hugo-site: baseof.html and single.html.
+There is one directory that is mandatory for all Hugo-sites: `_default`, go ahead and create it.
+In this folder, there are two files that are mandatory for any Hugo-site: `baseof.html` and `single.html`.
 
 You should have a folder structure that looks like this:
 
@@ -138,37 +135,76 @@ my-site
 
 ### baseof.html
 
-In baseof.html you should define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.
+In baseof.html you define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.
 
 **baseof.html**
 ```html
 <doctype html>
 <html>
 	<head>
-		<title></title>
+		<title>{{ .Site.Title }}</title>
 	</head>
 <body>
 	<nav>
 		<ul>
-			<li><a href="/hello">Hello</a></li>
-			<li><a href="/world">World</a></li>
+			<li><a href="hello">Hello</a></li>
+			<li><a href="world">World</a></li>
 		</ul>
 	</nav>
-	{{ template "primary" . }}
+	{{ template "main" . }}
 </body>
 </html>
 ```
+
+There are two template tags present in this file. As you can see they are surrounded with double curly brackets. These commands are evaluated when Hugo generates the site.
+
+The first tag `{{ .Site.Title }}` is replaced with the title of your site. The value is retrieved from your site configuration file. 
+
+The second tag is more interesting. 
+It is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that  tells Hugo to pass down the Page object to the templated area.
 
 ### single.html
 
 **single.html**
 ```html
-<h1>{{ .Title }}</h1>
-{{ .Content }}
+{{ define "main" }}
+
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
+
+{{ end }}
 ```
+
+In the single item template we begin by defining which templated areas this template contains.
+
+In our `baseof.html` file we only had one templated area (called `main`) and we also passed down the Page context using the dot command.
 
 ## Site configuration
 
-The **config.toml**-file located in the root of your project folder is where the global configuration of your site is located. This file contains the base URL along with a range of global settings for your site.
+The **config.toml**-file located in the root of your project folder is where the global configuration of your site is located. This file contains the configuration of your site.
+The default **config.toml**-file contains the following basic content:
 
+```toml
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+```
 
+You can use this file to hold global content, such as copyright, author information, key words etc.
+
+For example, if you add the following to the `config.toml` file:
+
+```toml
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+
+[params]
+	Author = "Your name"
+```
+
+..the values in the `params` block are available in your templates using:
+
+```html
+{{ .Site.Params.Author }}
+```
