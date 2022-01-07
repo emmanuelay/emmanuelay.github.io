@@ -26,7 +26,7 @@ For a total beginner, Hugo seems way more complicated than it actually is. In th
 <div class=post__meta>
 <p>
 February 1, 2021 by Emmanuel Ay -
-Estimated reading time: <strong>4 minutes</strong>
+Estimated reading time: <strong>5 minutes</strong>
 </p>
 </div>
 <nav id=TableOfContents>
@@ -54,7 +54,7 @@ For a total beginner, Hugo seems way more complicated than it actually is. In th
 If you have experience from common content management systems you know that there are certain concepts that are somewhat universal, such as <strong>templates</strong> and <strong>content</strong>. In Hugo, these concepts are a bit distorted under terms such as &ldquo;archetypes&rdquo;, &ldquo;pages&rdquo;, &ldquo;themes&rdquo; and &ldquo;layouts&rdquo;. Im not a big fan of Wordpress, but I can tell there are conceptual overlaps and influences from it in Hugo.</p>
 <p>In this article I will walk you through the basics of generating a website using nothing but Hugo and your favorite texteditor. After completing this you should be able to continue into the more complicated concepts of Hugo by yourself.</p>
 <h2 id=prerequisites--installation>Prerequisites & installation</h2>
-<p>I use mac and Homebrew for package management and I assume you do too.
+<p>I use mac and <a href=https://brew.sh/>Homebrew</a> for package management and I assume you do too.
 If you dont - just ensure you have the Hugo CLI installed and ready before skipping to the next step.</p>
 <p>If you have a Mac, fire up a terminal and install Hugo using Homebrew:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>brew install hugo
@@ -62,22 +62,21 @@ If you dont - just ensure you have the Hugo CLI installed and ready before skipp
 <h2 id=create-a-new-site>Create a new site</h2>
 <p>Navigate to a suitable folder for your project, and from there you should be able to initialize a Hugo-project using the Hugo CLI:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>hugo new site my-site
-</code></pre></div><p>This creates the &ldquo;my-site&rdquo; folder and sets up the recommended folder structure for a Hugo site. Its quite a handful:</p>
+</code></pre></div><p>This creates the &ldquo;my-site&rdquo; folder and sets up the recommended folder structure for a Hugo site:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ archetypes
+│ └- default.md
 ├─ content
 ├─ data
 ├─ layouts
-├─ resources
 ├─ static
 ├─ themes
 └- config.toml
 </code></pre></div><h2 id=remove-unneccessary-folders>Remove unneccessary folders</h2>
-<p>I will walk you through the bare minimum to generate a basic website and most of the folders that come with the &ldquo;new site&rdquo; command are not neccessary for our needs.</p>
+<p>I will walk you through the bare minimum to generate a basic website. Most of the folders that come with the &ldquo;new site&rdquo; command are not neccessary for our needs.</p>
 <p>Go ahead and delete: <strong>archetypes</strong>, <strong>data</strong>, <strong>themes</strong>, and <strong>static</strong> from our &ldquo;my-site&rdquo; folder. You should end up with this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ content
-├─ resources
 ├─ layout
 └- config.toml
 </code></pre></div><p>From here its much easier to explain the basics and start building a website.</p>
@@ -87,7 +86,6 @@ If you dont - just ensure you have the Hugo CLI installed and ready before skipp
 ├─ content
 │  ├─ hello.md
 │  └- world.md
-├─ resources
 ├─ layout
 └- config.toml
 </code></pre></div><p>Now add the following content to <strong>hello.md</strong>:</p>
@@ -98,7 +96,6 @@ title: Hello
 draft: <span style=color:#8be9fd;font-style:italic>false</span>
 ---
 
-<span style=color:#6272a4># Hello</span>
 This is the hello.md file
 </code></pre></div><p>..and this to the <strong>world.md</strong> file:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>---
@@ -108,16 +105,15 @@ title: World
 draft: <span style=color:#8be9fd;font-style:italic>false</span>
 ---
 
-<span style=color:#6272a4># World</span>
 This is the world.md file
 </code></pre></div><p>You&rsquo;ve created the content that our site contains. In the next steps you are going to create the <strong>templates</strong>.</p>
 <h2 id=create-templates>Create templates</h2>
-<p>Templates in Hugo are usually bundled into themes, but it is an optional construct.
-I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the <strong>layouts</strong> folder.</p>
+<p>Templates in Hugo are usually bundled into themes. Themes are usually located in the <code>themes</code> folder, but we deleted in order to simplify this tutorial. Truth is, themes are an optional construct. You can use the layout folder directly.</p>
+<p>I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. This template will be placed in the <strong>layouts</strong> folder.</p>
 <h3 id=layouts-folder>Layouts folder</h3>
 <p>The layouts folder has a special organization.
-There is one directory that is mandatory for all Hugo-sites: <strong>_default</strong>, go ahead and create it.
-In this folder, there are two files I consider mandatory for any Hugo-site: baseof.html and single.html.</p>
+There is one directory that is mandatory for all Hugo-sites: <code>_default</code>, go ahead and create it.
+In this folder, there are two files that are mandatory for any Hugo-site: <code>baseof.html</code> and <code>single.html</code>.</p>
 <p>You should have a folder structure that looks like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>my-site
 ├─ content
@@ -130,36 +126,61 @@ In this folder, there are two files I consider mandatory for any Hugo-site: base
 │    └- single.html
 └- config.toml
 </code></pre></div><h3 id=baseofhtml>baseof.html</h3>
-<p>In baseof.html you should define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.</p>
+<p>In baseof.html you define the foundational elements of a HTML-page: doctype, html, head, body and the primary navigation.</p>
 <p><strong>baseof.html</strong></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#ff79c6>doctype</span> <span style=color:#50fa7b>html</span>&gt;
 &lt;<span style=color:#ff79c6>html</span>&gt;
 	&lt;<span style=color:#ff79c6>head</span>&gt;
-		&lt;<span style=color:#ff79c6>title</span>&gt;&lt;/<span style=color:#ff79c6>title</span>&gt;
+		&lt;<span style=color:#ff79c6>title</span>&gt;{{ .Site.Title }}&lt;/<span style=color:#ff79c6>title</span>&gt;
 	&lt;/<span style=color:#ff79c6>head</span>&gt;
 &lt;<span style=color:#ff79c6>body</span>&gt;
 	&lt;<span style=color:#ff79c6>nav</span>&gt;
 		&lt;<span style=color:#ff79c6>ul</span>&gt;
-			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;/hello&#34;</span>&gt;Hello&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
-			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;/world&#34;</span>&gt;World&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
+			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;hello&#34;</span>&gt;Hello&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
+			&lt;<span style=color:#ff79c6>li</span>&gt;&lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;world&#34;</span>&gt;World&lt;/<span style=color:#ff79c6>a</span>&gt;&lt;/<span style=color:#ff79c6>li</span>&gt;
 		&lt;/<span style=color:#ff79c6>ul</span>&gt;
 	&lt;/<span style=color:#ff79c6>nav</span>&gt;
-	{{ template &#34;primary&#34; . }}
+	{{ template &#34;main&#34; . }}
 &lt;/<span style=color:#ff79c6>body</span>&gt;
 &lt;/<span style=color:#ff79c6>html</span>&gt;
-</code></pre></div><h3 id=singlehtml>single.html</h3>
+</code></pre></div><p>There are two template tags present in this file. As you can see they are surrounded with double curly brackets. These commands are evaluated when Hugo generates the site.</p>
+<p>The first tag <code>{{ .Site.Title }}</code> is replaced with the title of your site. The value is retrieved from your site configuration file.</p>
+<p>The second tag is more interesting.
+It is a placeholder for a <em>templated area</em>, which we have named &ldquo;main&rdquo;. You can call it whatever you like. The single dot <code>.</code> after <code>"main"</code> is a parameter that tells Hugo to pass down the Page object to the templated area.</p>
+<h3 id=singlehtml>single.html</h3>
 <p><strong>single.html</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#ff79c6>h1</span>&gt;{{ .Title }}&lt;/<span style=color:#ff79c6>h1</span>&gt;
-{{ .Content }}
-</code></pre></div><h2 id=site-configuration>Site configuration</h2>
-<p>The <strong>config.toml</strong>-file located in the root of your project folder is where the global configuration of your site is located. This file contains the base URL along with a range of global settings for your site.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
+
+	&lt;<span style=color:#ff79c6>h1</span>&gt;{{ .Title }}&lt;/<span style=color:#ff79c6>h1</span>&gt;
+	{{ .Content }}
+
+{{ end }}
+</code></pre></div><p>In the single item template we begin by defining which templated areas this template contains.</p>
+<p>In our <code>baseof.html</code> file we only had one templated area (called <code>main</code>) and we also passed down the Page context using the dot command.</p>
+<h2 id=site-configuration>Site configuration</h2>
+<p>The <strong>config.toml</strong>-file located in the root of your project folder is where the global configuration of your site is located. This file contains the configuration of your site.
+The default <strong>config.toml</strong>-file contains the following basic content:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#39;http://example.org/&#39;</span>
+languageCode = <span style=color:#f1fa8c>&#39;en-us&#39;</span>
+title = <span style=color:#f1fa8c>&#39;My New Hugo Site&#39;</span>
+</code></pre></div><p>You can use this file to hold global content, such as copyright, author information, key words etc.</p>
+<p>For example, if you add the following to the <code>config.toml</code> file:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>baseURL = <span style=color:#f1fa8c>&#39;http://example.org/&#39;</span>
+languageCode = <span style=color:#f1fa8c>&#39;en-us&#39;</span>
+title = <span style=color:#f1fa8c>&#39;My New Hugo Site&#39;</span>
+
+[params]
+	Author = <span style=color:#f1fa8c>&#34;Your name&#34;</span>
+</code></pre></div><p>..the values in the <code>params</code> block are available in your templates using:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ .Site.Params.Author }}
+</code></pre></div>
 </span>
 </section>
 <p>default / single.html</p>
 <p>default / baseof.html</p>
 <footer>
 <p>
-Copyright &copy; 2021 emmanuelay.se
+Copyright &copy; 2022 emmanuelay.se
 <span>Powered by <a href=https://gohugo.io>Hugo</a></span>
 </p>
 </footer></body>
