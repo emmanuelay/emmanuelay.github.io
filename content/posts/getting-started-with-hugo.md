@@ -141,7 +141,7 @@ Templates in Hugo are usually bundled into themes. Themes are located in the roo
 
 Instead, we will use the **layout** folder to contain our templates.
 
-I will explain themes at a later stage, but for this tutorial I will just show you create a basic template to render your content. 
+I might write up something to explain themes at a later stage, but for this tutorial I will just show you how to create a basic template to render your content. 
 
 ### Layouts folder
 
