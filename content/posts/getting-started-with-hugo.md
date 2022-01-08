@@ -7,7 +7,7 @@ tags: ["hugo"]
 ---
 
 I needed a quick way of jotting down stuff in markdown and having it instantly published to a website. 
-Even though I have decades of experience developing web sites, I still struggled to understand the basics of Hugo! I was baffled by the steep learning curve it had. It *can't be* that hard I thought, I know how to do this. Yes, I figured it out - and I wrote this tutorial because I wish somebody already had written it. 
+Even though I have decades of experience developing web sites, I still struggled to understand the basics of Hugo! I was baffled by the steep learning curve it had. It *can't be* that hard I thought, and yes, I did eventually figure it out - and I wrote this tutorial because I wish somebody already had written it. 
 
 <!--more-->
 
