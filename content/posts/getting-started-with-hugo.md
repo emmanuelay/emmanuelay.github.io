@@ -145,9 +145,9 @@ I might write up something to explain themes at a later stage, but for this tuto
 
 ### Layouts folder
 
-The layouts folder has a special organization. 
+Hugo is particularly opinionated in this specific aspect. The **layout** folder needs to be structured in a specific way. The reason for this is that Hugo uses the structure to [look up the correct template](https://gohugo.io/templates/lookup-order/) in a specific order. 
 
-In it there is one folder that is mandatory for all Hugo-sites: `_default`, go ahead and create it.
+In the folder there is one folder that is mandatory: `_default`, go ahead and create it.
 In this folder, there are two files that are needed: `baseof.html` and `single.html`.
 And the last template file we need to create should be located in the root of your layout folder, it is for the home page of your site: `index.html`.
 
@@ -169,7 +169,7 @@ my-site
 
 ### baseof.html
 
-In baseof.html you usually put the foundational elements of a HTML-page: `doctype`, `html`, etc.
+In baseof.html you put the foundational elements of a HTML-page: `doctype`, `html`, etc.
 
 ```html
 <doctype html>
@@ -205,7 +205,7 @@ Remember the `menu` frontmatter tag that was included in all content files? This
 
 **Templated area**
 
-The third tag is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that  tells Hugo to pass down the current page context to the templated area.
+The third tag is a placeholder for a *templated area*, which we have named "main". You can call it whatever you like. The single dot `.` after `"main"` is a parameter that tells Hugo to pass down the current page context to the templated area. The page context can be likened to an object that contains the current pages content and metadata.
 
 ### single.html
 
@@ -222,7 +222,7 @@ Lets move on to the first actual template.
 
 In the single item template we begin by defining which templated areas this template contains.
 
-In our `baseof.html` file we only had one templated area (called `main`) and we also passed down the Page object using the dot command. That is how the tag `{{ .Title }}` in this template gets its value.
+In our `baseof.html` file we only had one templated area (called `main`) and we also passed down the Page object using the dot command. The page context is present in the template and that is how the tag `{{ .Title }}` in this template gets its value.
 
 ### index.html
 
