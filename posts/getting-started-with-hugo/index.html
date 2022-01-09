@@ -140,8 +140,8 @@ This is the world.md file
 <p>Instead, we will use the <strong>layout</strong> folder to contain our templates.</p>
 <p>I might write up something to explain themes at a later stage, but for this tutorial I will just show you how to create a basic template to render your content.</p>
 <h3 id=layouts-folder>Layouts folder</h3>
-<p>The layouts folder has a special organization.</p>
-<p>In it there is one folder that is mandatory for all Hugo-sites: <code>_default</code>, go ahead and create it.
+<p>Hugo is particularly opinionated in this specific aspect. The <strong>layout</strong> folder needs to be structured in a specific way. The reason for this is that Hugo uses the structure to <a href=https://gohugo.io/templates/lookup-order/>look up the correct template</a> in a specific order.</p>
+<p>In the folder there is one folder that is mandatory: <code>_default</code>, go ahead and create it.
 In this folder, there are two files that are needed: <code>baseof.html</code> and <code>single.html</code>.
 And the last template file we need to create should be located in the root of your layout folder, it is for the home page of your site: <code>index.html</code>.</p>
 <p>You should have a folder structure that looks like this:</p>
@@ -157,7 +157,7 @@ And the last template file we need to create should be located in the root of yo
 │  └- index.html
 └- config.toml
 </code></pre></div><h3 id=baseofhtml>baseof.html</h3>
-<p>In baseof.html you usually put the foundational elements of a HTML-page: <code>doctype</code>, <code>html</code>, etc.</p>
+<p>In baseof.html you put the foundational elements of a HTML-page: <code>doctype</code>, <code>html</code>, etc.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#ff79c6>doctype</span> <span style=color:#50fa7b>html</span>&gt;
 &lt;<span style=color:#ff79c6>html</span>&gt;
 	&lt;<span style=color:#ff79c6>head</span>&gt;
@@ -182,7 +182,7 @@ And the last template file we need to create should be located in the root of yo
 It iterates over the items in the <code>.Site.Menus.main</code> collection and renders the encapsulated <code>li</code>-element block.</p>
 <p>Remember the <code>menu</code> frontmatter tag that was included in all content files? This is where its put to use, each piece of content that has the frontmatter tag <code>main</code> is included in the <code>.Site.Menus.main</code> collection.</p>
 <p><strong>Templated area</strong></p>
-<p>The third tag is a placeholder for a <em>templated area</em>, which we have named &ldquo;main&rdquo;. You can call it whatever you like. The single dot <code>.</code> after <code>"main"</code> is a parameter that tells Hugo to pass down the current page context to the templated area.</p>
+<p>The third tag is a placeholder for a <em>templated area</em>, which we have named &ldquo;main&rdquo;. You can call it whatever you like. The single dot <code>.</code> after <code>"main"</code> is a parameter that tells Hugo to pass down the current page context to the templated area. The page context can be likened to an object that contains the current pages content and metadata.</p>
 <h3 id=singlehtml>single.html</h3>
 <p>Lets move on to the first actual template.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
@@ -192,7 +192,7 @@ It iterates over the items in the <code>.Site.Menus.main</code> collection and r
 
 {{ end }}
 </code></pre></div><p>In the single item template we begin by defining which templated areas this template contains.</p>
-<p>In our <code>baseof.html</code> file we only had one templated area (called <code>main</code>) and we also passed down the Page object using the dot command. That is how the tag <code>{{ .Title }}</code> in this template gets its value.</p>
+<p>In our <code>baseof.html</code> file we only had one templated area (called <code>main</code>) and we also passed down the Page object using the dot command. The page context is present in the template and that is how the tag <code>{{ .Title }}</code> in this template gets its value.</p>
 <h3 id=indexhtml>index.html</h3>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{ define &#34;main&#34; }}
 
