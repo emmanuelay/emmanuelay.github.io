@@ -15,32 +15,41 @@ body {
 	color: $fg-color;
 	background-color: $bg-color;
 	font-family: $content-font-family;
-	font-size: 1.9em;
+	font-size: 1.8em;
 	font-weight: 300;
-	line-height: 1.9em;
+	line-height: 1.6em;
 	padding: 0rem;
 }
 
 h1, h2, h3, h4, h5 {
 	font-family: $header-font-family;
-	font-weight: 700;
-	font-size: 3rem;
 }
 
-.container {
+section {
+
 	@media (max-width: 576px) {
 		width: 100%;
 	}
 	@media (min-width: 577px) and (max-width: 767px) {
-		width: 540px;
+		width: 540px;	
 	}
 	@media (min-width: 766px) and (max-width: 991px) {
 		width: 720px;
 	}
-	@media (min-width: 992px) and (max-width: 1200px) {
+	@media (min-width: 992px) {
 		width: 960px;
 	}
-	@media (min-width: 1200px)  {
-		width: 1140px;
-	}
+}
+
+.pattern {
+	line, polyline { fill: none; stroke: red; stroke-width: 2.5; }
+	stroke: red;
+}
+
+hr {
+	background-image: url(/img/meander.svg);
+	background-repeat: repeat-x;
+	background-size: 30px 30px; 
+	height: 30px;
+	border: 0;
 }

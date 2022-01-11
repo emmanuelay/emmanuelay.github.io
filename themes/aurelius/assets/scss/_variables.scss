@@ -1,13 +1,18 @@
 // Fonts
-$content-font-family: 'Poppins', sans-serif;
-$header-font-family: 'Montserrat', sans-serif;
-$title-font-family: 'Montserrat', sans-serif;
+$content-font-family: 'Arial', sans-serif;
+$header-font-family: 'Arial', sans-serif;
+$title-font-family: 'Arial', sans-serif;
 
 // Colors
 $bg-color: rgb(237, 242, 244);
 $doc-color: #ccc;
 $fg-color: #000;
-$nav-bg-color: #efefef;
+$nav-bg-color: rgb(43, 45, 66);
 
 $link-color: rgb(255, 0, 110);
+$link-hover-color: rgb(255,0,100);
 $link-color-visited: rgb(217, 4, 41);
+
+// Measurements
+$abs-max-width: 864px;
+$percent-max-width: 80%;

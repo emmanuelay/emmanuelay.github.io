@@ -1,9 +1,4 @@
 {{ define "main" }}
-<section class="welcome">
-	<h1>{{ .Title }}</h1>
-	{{ .Content }}
-	<p>_default / list.html</p>
-</section>
 <section class="posts">
 	{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
 	{{ range $paginator.Pages }}
@@ -17,7 +12,7 @@
 			<span class="posts-item__meta-read">{{ math.Round (div (countwords .Content) 220.0) }} minutes</span>
 		</div>
 		<div class="posts-item__summary">
-		  {{ .Summary }}
+			{{ .Summary }}
 		</div>
 	</div>
 	{{ end }}

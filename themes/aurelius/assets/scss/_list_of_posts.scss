@@ -1,42 +1,24 @@
 .posts {
-
-	h1, h2, h3, h4, h5 {
-		margin: 0rem;
-		padding-left:6rem;
-		padding-bottom: 1.5rem;
-	}
-
-	h1:first-child {
-		font-size: 4rem;
-	}
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	margin: 0 auto;
 
 	a {
-		color: #000;
+		color: $link-color;
 		text-decoration: none;
 
 		&:hover {
-			color: #c0f;
+			color: $link-hover-color;
 		}
 	}
 
-	p {
-		padding-left:6rem;
-		padding-right:30rem;
-	}
-
 	.posts-item {
-		padding-top: 8rem;
-		padding-bottom: 8rem;
-		border-bottom: 1px solid #fff;
 
 		&__title {
-			font-weight: 400;
-			font-size: 2.5rem;
 			padding-bottom: 0rem;
 		}
 
 		&__meta {
-			padding: 0rem 6rem;
 			color: rgba(0,0,0,.3);
 			font-size: 1.5rem;
 
@@ -50,17 +32,6 @@
 
 			&-read {
 				color:rgba(0,0,0,.7);
-			}
-		}
-
-		&__summary {
-			color: rgba(0,0,0,.9);
-			font-size: 1.6rem;
-			line-height: 3rem;
-	
-
-			strong {
-				font-weight: 700;
 			}
 		}
 	}

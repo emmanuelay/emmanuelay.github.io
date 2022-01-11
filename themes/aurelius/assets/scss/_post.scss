@@ -1,32 +1,20 @@
 .post {
 
 	margin: 0 auto;
-	padding-bottom: 4rem;
-	margin-top: 10rem;
-	margin-bottom: 2rem;
+	padding-top: 4rem;
 	
 	h1:first-child {
-		margin-top: 6rem;
-		font-size: 3rem;
-		font-weight: 500;
-		line-height: 5rem;
-		letter-spacing: -1px;
-		margin-bottom: 1rem;
+		font-size: 2.5rem;
 	}
 
 	h2 {
-		margin-top: 4rem;
+		margin-top: 2rem;
 		margin-bottom: 2rem;
-		font-weight: 500;
-		letter-spacing: -1px;
+		font-size: 2rem;
 	}
 
 	p {
-		margin-bottom: 2.5rem;
-
-		strong {
-			font-weight: 500;
-		}
+		margin-bottom: 2.0rem;
 
 		code {
 			background-color: rgba(1,1,1,0.1);
@@ -43,12 +31,10 @@
 				color: #000;
 			}
 		}
-	
 	}
 
-
 	.intro {
-		font-weight: 500;
+		font-weight: bold;
 	}
 
 	ul {
@@ -58,12 +44,8 @@
 	}
 
 	&__meta {
-		font-size: 1.5rem;
+		margin-top: 1.5rem;
 		color: #999;
-
-		p {
-			margin: 0rem;
-		}
 	}
 
 	#TableOfContents {
@@ -108,7 +90,7 @@
 		pre {
 			border-radius: 1rem;
 			padding: 3rem 4rem;
-			line-height: 2.3rem;			
+			line-height: 2.1rem;			
 		}
 	}
 

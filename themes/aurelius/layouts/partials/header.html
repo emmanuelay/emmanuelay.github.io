@@ -1,8 +1,8 @@
 <header>
-	<canvas id="flap">
-	</canvas>
-	<h1><a href="/">{{ .Site.Title }}</a></h1>
-	<nav class="primary">
+	<h1>
+		<a href="/">{{ .Site.Title }}</a>
+	</h1>
+	<nav>
 		<ul>
 		{{ range .Site.Menus.main }}
 			<li><a href="{{ .URL }}">{{ .Name }}</a></li>

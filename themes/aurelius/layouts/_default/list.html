@@ -5,7 +5,7 @@
 	{{ range .Pages.ByPublishDate.Reverse }}
 	<p>
 		<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-		<p>{{ .Summary }}</p>
 	</p>
 	{{ end }}
+	
 {{ end }}
