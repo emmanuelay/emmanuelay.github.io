@@ -15,9 +15,7 @@ body {
 	color: $fg-color;
 	background-color: $bg-color;
 	font-family: $content-font-family;
-	font-size: 1.8em;
-	font-weight: 300;
-	line-height: 1.6em;
+	font-feature-settings: "zero","ss03","cv11","cv08";
 	padding: 0rem;
 }
 
