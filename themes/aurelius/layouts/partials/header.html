@@ -5,7 +5,7 @@
 	<nav>
 		<ul>
 		{{ range .Site.Menus.main }}
-			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+			<li id="{{ with .Page.Params.id }}{{ . }}{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
 		{{ end }}
 		</ul>
 	</nav>

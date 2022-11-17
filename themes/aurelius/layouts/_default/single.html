@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div class="content">
 <section class="post">
 	<h1>{{ .Title }}</h1>
 	<div class="post__meta">
@@ -16,5 +17,5 @@
 		{{ $body | emojify | safeHTML }}	
 	</span>
 </section>
-<p>default / single.html</p>
+</div>
 {{ end }}

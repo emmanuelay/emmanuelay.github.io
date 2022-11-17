@@ -1,7 +1,7 @@
 {{ $paginator := .Paginator }}
 
+<section>
 {{ if gt $paginator.TotalPages 1 }}
-
   <ul class="pagination">
     
     <!-- First page. -->
@@ -51,3 +51,4 @@
 
   </ul><!-- .pagination -->
 {{ end }}
+</section>

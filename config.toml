@@ -20,4 +20,4 @@ pygmentsCodeFences = true
     lineNoStart = 1
     noClasses = true
     style = "dracula"
-    tabWidth = 4
+    tabWidth = 2

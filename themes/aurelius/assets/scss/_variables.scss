@@ -1,9 +1,10 @@
 // Fonts
-$content-font-family: 'Inter', sans-serif;
-$header-font-family: 'Inter', sans-serif;
-$title-font-family: 'Inter', sans-serif;
+$content-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$header-font-family: sans-serif;
+$title-font-family: sans-serif;
 
 // Colors
+$doc-bg-color: rgb(43, 45, 66);
 $bg-color: rgb(237, 242, 244);
 $doc-color: #ccc;
 $fg-color: #000;
@@ -12,6 +13,9 @@ $nav-bg-color: rgb(43, 45, 66);
 $link-color: rgb(255, 0, 110);
 $link-hover-color: rgb(255,0,100);
 $link-color-visited: rgb(217, 4, 41);
+
+$text-color: rgb(53, 53, 53);
+$header-color: rgb(23, 0, 93);
 
 // Measurements
 $abs-max-width: 864px;

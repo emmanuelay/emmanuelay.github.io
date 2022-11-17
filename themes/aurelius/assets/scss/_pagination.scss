@@ -1,13 +1,13 @@
 .pagination {
 
 	list-style-type: none;
-	margin-left: 6rem;
-	margin-top: 2rem;
+	// margin-left: 6rem;
+	// margin-top: 2rem;
 	margin-bottom: 2rem;
 
 	&__item {
 		display: inline-block;
-		font-size: 1.6rem;
+		font-size: 1rem;
 		background-color: rgba(#000,.1);
 
 		&:hover {
@@ -47,7 +47,7 @@
 
 	&__link {
 		display: block;
-		padding: 1rem 2.5rem;
+		padding: 2rem 2.5rem;
 		color: #fff;
 		text-decoration: none;
 

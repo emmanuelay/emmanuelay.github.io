@@ -1,5 +1,5 @@
 ---
-date: 2021-02-01
+date: 2021-02-21
 author: Emmanuel Ay
 draft: false
 title: Getting started with Hugo in 8 minutes
@@ -7,9 +7,13 @@ tags: ["hugo"]
 ---
 
 I needed a quick way of jotting down stuff in markdown and having it instantly published to a website. 
-Even though I have decades of experience developing web sites, I still struggled to understand the basics of Hugo! I was baffled by the steep learning curve it had. It *can't be* that hard I thought, and yes, I did eventually figure it out - and I wrote this tutorial because I wish somebody already had written it. 
+Even though I have decades of experience developing web sites, I still struggled to understand the basics of Hugo! 
 
 <!--more-->
+
+I was baffled by the steep learning curve it had. It *can't be* that hard I thought, and yes, I did eventually figure it out - and I wrote this tutorial because I wish somebody already had written it. 
+
+
 
 The purpose of this article is to show you how to quickly create a Hugo site where your content is merged with your templates to generate HTML. After reading this article you should understand the basics and be able to continue into the more complicated concepts of Hugo by yourself. 
 

@@ -13,9 +13,8 @@ html {
 body {
 	box-sizing: border-box; /* Borders and padding are added to the height */
 	color: $fg-color;
-	background-color: $bg-color;
+	background-color: $doc-bg-color;
 	font-family: $content-font-family;
-	font-feature-settings: "zero","ss03","cv11","cv08";
 	padding: 0rem;
 }
 
@@ -23,13 +22,18 @@ h1, h2, h3, h4, h5 {
 	font-family: $header-font-family;
 }
 
-section {
+.content {
+	background-color: $bg-color;
+}
 
+section {
+	margin: 0 auto;
+	
 	@media (max-width: 576px) {
 		width: 100%;
 	}
 	@media (min-width: 577px) and (max-width: 767px) {
-		width: 540px;	
+		width: 540px;
 	}
 	@media (min-width: 766px) and (max-width: 991px) {
 		width: 720px;

@@ -1,10 +1,21 @@
 .posts {
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-	margin: 0 auto;
+
+	@media (max-width: 576px) {
+		padding-top: 0rem;
+		padding-bottom: 0rem;	
+	}
+	
+	@media (min-width: 577px) {
+		padding-top: 16rem;
+		padding-bottom: 16rem;				
+	}
+
+	& > :not(:last-child) {
+		border-bottom: 1px solid rgba(0,0,0,.05);
+	}
 
 	a {
-		color: $link-color;
+		color: $header-color;
 		text-decoration: none;
 
 		&:hover {
@@ -14,13 +25,30 @@
 
 	.posts-item {
 
-		&__title {
-			padding-bottom: 0rem;
+		@media (max-width: 576px) {
+			padding: 4rem 2rem;
+
+			&__title {
+				font-size: 2rem;
+				padding-bottom: 1rem;			
+			}
 		}
+
+		@media (min-width: 577px) {
+			padding: 4rem 2rem;
+
+			&__title {
+				font-size: 3rem;
+				padding-bottom: 1rem;			
+			}		
+		}
+
+		
 
 		&__meta {
 			color: rgba(0,0,0,.3);
-			font-size: 1.5rem;
+			font-size: 1.6rem;
+			margin-bottom: .5rem;
 
 			&-date {
 				margin-right: 1rem;
@@ -38,6 +66,7 @@
 		&__summary {
 			font-size: 1.6rem;
 			line-height: 2.5rem;
+			color: $text-color;
 		}
 	}
 }
