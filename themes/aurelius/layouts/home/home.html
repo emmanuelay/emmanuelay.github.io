@@ -15,7 +15,6 @@
 			<div class="posts-item__meta">
 				<span class="posts-item__meta-date">{{ .Date.Format "Jan 2, 2006" }}</span> 
 				{{ with .Params.tags }}<span class="posts-item__meta-tag">{{ delimit . ", " }}</span>{{ end }}
-				<span class="posts-item__meta-read">{{ .ReadingTime }} minutes</span>
 			</div>
 			<div class="posts-item__summary">
 				{{ .Summary }}

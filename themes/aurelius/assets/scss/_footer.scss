@@ -3,7 +3,7 @@ footer {
 	@media (max-width: 576px) {
 		padding: 8rem;
 		text-align: center;
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	@media (min-width: 577px) {
@@ -13,7 +13,12 @@ footer {
 	}
 
 	text-transform: uppercase;
-	color: rgb(204, 213, 216);
+	color: $secondary-color;
+
+	a {
+		color: $secondary-color
+	}
+
 
 	ul {
 		list-style-type: none;
@@ -26,16 +31,12 @@ footer {
 	.social {
 		a {
 			text-decoration: none;
-			color: #555;
+			color: $secondary-color-variant;
 
 			&:hover {
 				color: #fc0;
 			}
 		}
-	}
-
-	a {
-		color: rgb(204, 213, 216);
 	}
 
 	span {

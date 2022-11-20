@@ -3,20 +3,34 @@ $content-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
 $header-font-family: sans-serif;
 $title-font-family: sans-serif;
 
+// Base colors
+$black-color: rgb(0,0,0);
+$white-color: rgb(255,255,255);
+
+$primary-color: rgb(2, 48, 71);
+
+$secondary-color: rgb(251, 133, 0);
+$secondary-color-variant: rgb(255, 183, 3);
+
+$tertiary-color: rgb(33, 158, 188);
+$tertiary-color-variant: rgb(142, 202, 230);
+
 // Colors
-$doc-bg-color: rgb(43, 45, 66);
-$bg-color: rgb(237, 242, 244);
-$doc-color: #ccc;
-$fg-color: #000;
-$nav-bg-color: rgb(43, 45, 66);
+$doc-bg-color: $primary-color;
+$bg-color: $white-color;
+$doc-color: $white-color;
+$fg-color: $primary-color;
+$nav-bg-color: $primary-color;
 
-$link-color: rgb(255, 0, 110);
-$link-hover-color: rgb(255,0,100);
-$link-color-visited: rgb(217, 4, 41);
+$link-color: $secondary-color;
+$link-hover-color: rgba($link-color, .1);
+$link-color-visited: rgba($link-color, .5);
 
-$text-color: rgb(53, 53, 53);
-$header-color: rgb(23, 0, 93);
+$text-color: $primary-color;
+$header-color: $primary-color;
 
 // Measurements
 $abs-max-width: 864px;
 $percent-max-width: 80%;
+
+

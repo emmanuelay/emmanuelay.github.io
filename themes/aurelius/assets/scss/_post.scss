@@ -2,8 +2,24 @@
 
 	background-color: $bg-color;
 
+	ul {
+		list-style-type: square;
+		margin-top: 0rem;
+		margin-bottom: 2.5rem;
+	}
+
+	&__meta {
+		margin-top: 1.5rem;
+		color: rgba($primary-color, .5);
+	}
+
 	@media (max-width: 576px) {
-		padding-top: 20rem;
+		
+		&__meta {
+			margin-top: 1.0rem;
+		}
+
+		padding-top: 5rem;
 		padding-bottom: 10rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -11,6 +27,46 @@
 		pre {
 			padding: 2rem;
 			font-size: 2rem;
+		}
+
+		h1:first-child {
+			font-size: 3rem;
+			letter-spacing: -.1rem;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+		}
+	
+		h3 {
+			font-size: 2rem;
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+			color: #888;
+		}
+
+		p {
+			margin-bottom: 2.0rem;
+			font-size: 1.5rem;
+			font-weight: 300;
+			line-height: 1.7em;
+	
+			code {
+				background-color: rgba(1,1,1,0.1);
+				display: inline;
+				padding: 4px 10px;
+				border-radius: 4px;
+			}
+	
+			a {
+				color: $link-color;
+		
+				&:hover {
+					color: #000;
+				}
+			}
 		}
 	}
 
@@ -21,61 +77,56 @@
 		pre {
 			padding: 3rem;
 			font-size: 2rem;
-		}		
-	}
-	
-	h1:first-child {
-		font-size: 5rem;
-		letter-spacing: -.1rem;
-	}
-
-	h2 {
-		font-size: 3.5rem;
-		margin-top: 5rem;
-		margin-bottom: 2rem;
-	}
-
-	h3 {
-		font-size: 3rem;
-		margin-top: 5rem;
-		margin-bottom: 2rem;
-		color: #888;
-	}
-
-	p {
-		margin-bottom: 2.0rem;
-		font-size: 2rem;
-		font-weight: 300;
-		line-height: 1.7em;
-
-		code {
-			background-color: rgba(1,1,1,0.1);
-			display: inline;
-			padding: 4px 10px;
-			border-radius: 4px;
 		}
 
-		a {
-			color: $link-color;
+		h1:first-child {
+			font-size: 5rem;
+			letter-spacing: -.1rem;
+		}
+
+		h2 {
+			font-size: 3.5rem;
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+		}
 	
-			&:hover {
-				color: #000;
+		h3 {
+			font-size: 3rem;
+			margin-top: 5rem;
+			margin-bottom: 2rem;
+			color: #888;
+		}
+
+		p {
+			margin-bottom: 2.0rem;
+			font-size: 2rem;
+			font-weight: 300;
+			line-height: 1.7em;
+	
+			code {
+				background-color: rgba(1,1,1,0.1);
+				display: inline;
+				padding: 4px 10px;
+				border-radius: 4px;
+			}
+	
+			a {
+				color: $link-color;
+
+				&:hover {
+					color: rgba($link-color,.5);
+				}
 			}
 		}
 	}
 
-	ul {
-		list-style-type: square;
-		margin-top: 0rem;
-		margin-bottom: 2.5rem;
+	.intro p {
+		font-weight: 500;	
 	}
 
-	&__meta {
-		margin-top: 1.5rem;
-		color: #889;
-	}
 
 	#TableOfContents {
+		display: none;
 		padding: 2rem 0rem;
 		font-size: 1.6rem;
 		font-weight: 400;
@@ -103,7 +154,7 @@
 
 			li {
 				list-style-type: square;
-			}			
+			}
 		}
 	}
 
@@ -111,8 +162,6 @@
 		overflow-x: auto;
 		border-radius: 1rem;
 		margin: 0rem;
-		
 		margin-bottom: 2.0rem;
 	}
-
 }

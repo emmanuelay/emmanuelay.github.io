@@ -4,7 +4,8 @@
 	<h1>{{ .Title }}</h1>
 	<div class="post__meta">
 		<p>
-			{{ .PublishDate.Format "January 2, 2006" }} by {{ .Params.author }} -
+			{{ .PublishDate.Format "January 2, 2006" }} by {{ .Params.author }}
+			<br/>
 			Estimated reading time: <strong>{{ .ReadingTime }} minutes</strong>
 		</p>	
 	</div>

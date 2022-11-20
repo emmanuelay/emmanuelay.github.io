@@ -1,6 +1,16 @@
 .welcome {
 	width: 100%;
-	background-color: #d7d7d7;
+	background-color: rgba($tertiary-color-variant, .2);	
+	border-bottom: 1px solid rgba($doc-bg-color, .1);
+
+	h1 {
+		color: $tertiary-color;
+		font-weight: bold;
+	}
+
+	p {
+		color: $primary-color;
+	}
 
 	@media (max-width: 576px) {
 		padding: 0 2rem;
