@@ -6,4 +6,4 @@ draft: false
 type: home
 ---
 
-Hello, I’m Emmanuel. Im software engineer that likes to code and create things. On this website, you’ll discover some of my thoughts and collections of inspiring things I've found online.
+Hello, I’m Emmanuel. On this website you’ll discover a collection of inspiring things I've found online - and some of my thoughts.
