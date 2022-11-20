@@ -6,15 +6,14 @@ title: Hello, world domination!
 tags: ["hugo","css"]
 ---
 
-For the longest I've been meaning to publish my own site. 
-
-I've been journalling for the last couple of years and grown into the habit of collecting my plans and thoughts in writing. Getting content published is so easy to do today, just write your stuff on Medium or sign up on one of all the 1-click Wordpress hosting solutions available. But if you're a developer and you care about whats going on underneath it all, its not that simple...
+For the longest I've been meaning to publish my own site.
+But for some reason I've never taken the time to actually do it. 
+I've been journalling for the last couple of years and grown into the habit of collecting my thoughts and ideas in writing. 
 
 <!--more-->
 
-I've actually given Wordpress a go, but you know how that ends... I spend a month finding the perfect theme only to discover that it has kinks that I don't like. And when I found a theme I did like  that fits my needs, adjusting the last 1% requires getting my hands dirty in someone elses pile of CSS. Even if that was fixable, the rendered HTML from Wordpress is not.
+To publish this i opted to go with something that gives me total control of the html/css and supports markdown for content.
 
-To get it just right, you need to have control over the process of putting content into templates and publishing it. 
-Since my content is static and hosting is free on Github, I opted to go with Hugo - A Golang-based static site generator.
+I found [Hugo](https://gohugo.io), a static site generator built with [Go](https://go.dev), to be just the right tool for the job. It was a bit quirky to get up and running, but once I learned the basics - it was quite pleasant. Github provides the ability to generate and publish Hugo-based websites using [Github Actions](https://github.com/features/actions), so I decided to put everything there.
 
-And here we are. A simple enough website, using plain old markdown rendered into handcrafted HTML with a side of my own CSS. Publishing is as easy as pushing a markdown to a git-repo. I'm finally done.
+And here we are. A simple enough website, using plain old markdown rendered into handcrafted HTML with a side of my own CSS. Full flexibility and the git-based publishing workflow. I'm finally done.
