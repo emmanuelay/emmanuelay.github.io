@@ -1,7 +1,7 @@
 ---
-date: 2021-02-21
+date: 2022-11-17
 author: Emmanuel Ay
-draft: false
+draft: true
 title: Getting started with Hugo in 8 minutes
 tags: ["hugo"]
 ---
@@ -324,6 +324,6 @@ Open up a browser and navigate to the URL that the command returns (usually some
 
 ## Wrapping up
 
-You have now successfully created a very basic website using Hugo.
+You have now successfully created a very basic website using Hugo. It's not pretty, but now it should be more clear for you how templates are defined and how they are put to use.
 
-It's not pretty, but now it should be more clear for you how templates are defined and how they are put to use.
+Now go create something!
