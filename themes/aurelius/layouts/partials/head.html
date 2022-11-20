@@ -18,5 +18,3 @@
 	{{ with $authors }}
 	<meta name="author" content="{{ delimit . "," }}">
 	{{ end }}
-	{{ $streamsJS := resources.Get "js/streams.js" }}
-	<script type="text/javascript" src="{{ $streamsJS.RelPermalink }}"></script>

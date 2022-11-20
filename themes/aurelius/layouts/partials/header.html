@@ -3,10 +3,8 @@
 		<a href="/">{{ .Site.Title }}</a>
 	</h1>
 	<nav>
-		<ul>
-		{{ range .Site.Menus.main }}
+		<ul>{{ range .Site.Menus.main }}
 			<li id="{{ with .Page.Params.id }}{{ . }}{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
-		{{ end }}
-		</ul>
+		{{ end }}</ul>
 	</nav>
 </header>
