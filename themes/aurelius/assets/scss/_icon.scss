@@ -1,0 +1,28 @@
+.icon {
+	display: inline-block;
+	border: 0px;
+	width: 1em;
+	height: 1em;
+	background-color: $white-color;
+	mask-repeat: no-repeat;
+
+	&-linkedin {
+		mask: url(/img/icon-linkedin.svg);
+	}
+	
+	&-twitter {
+		mask: url(/img/icon-twitter.svg);
+	}
+	
+	&-github {
+		mask: url(/img/icon-github.svg);
+	}
+
+	&-hugo {
+		mask: url(/img/icon-hugo.svg);
+
+		&:hover {
+			background-color: #ff4088;
+		}
+	}
+}
