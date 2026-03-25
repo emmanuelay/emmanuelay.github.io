@@ -10,6 +10,7 @@ paginate = 1
 	Author = "Emmanuel Ay"
 	description = "Emmanuel Ays personal webpage"
 	Keywords = "emmanuel ay, mani, emmanuel mani ay, block21"
+	googleAnalytics = "G-KN1DPJEK26"
 
 [markup]
   [markup.highlight]
