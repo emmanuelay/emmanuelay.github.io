@@ -1,0 +1,24 @@
+.terminal-pagination {
+  display: flex;
+  gap: $space;
+  padding: ($space * 4) 0;
+
+  .page-link {
+    padding: ($space / 2) $space;
+    color: $secondary-color;
+    text-decoration: none;
+    border: 1px solid $secondary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $bg-color;
+      border-color: $primary-color;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $bg-color;
+      border-color: $primary-color;
+    }
+  }
+}

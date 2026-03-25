@@ -1,0 +1,37 @@
+.welcome {
+  padding: ($space * 6) 0;
+
+  @media (max-width: $mobile) {
+    padding: ($space * 3) 0;
+  }
+}
+
+.welcome-content {
+  h1 {
+    font-size: $font-size;
+    font-weight: 700;
+    margin-bottom: $space * 2;
+    color: $primary-color;
+
+    &::before {
+      content: "~/ ";
+      color: $secondary-color;
+    }
+  }
+
+  p {
+    color: $secondary-color;
+    line-height: 1.6em;
+  }
+}
+
+.recent-posts {
+  padding-bottom: $space * 6;
+
+  h2 {
+    font-size: $font-size;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: $space * 2;
+  }
+}

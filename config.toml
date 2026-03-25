@@ -1,11 +1,10 @@
 baseURL = "https://emmanuelay.github.io"
 languageCode = "en-us"
 title = "Streams of thought"
-theme = "aurelius"
+theme = "terminalator"
 disableKinds = ["taxonomy", "term"]
 disableHugoGeneratorInject = true
 paginate = 1
-pygmentsCodeFences = true
 
 [params]
 	Author = "Emmanuel Ay"

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="welcome">
+  <div class="welcome-content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </div>
+</section>
+
+<section class="recent-posts">
+  <h2>Recent posts</h2>
+  <hr>
+  {{ range (first 3 (where .Site.RegularPages "Section" "posts")) }}
+  <article class="post-item">
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="post-meta">
+      <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+      {{ with .Params.tags }}
+      <span class="post-tags">{{ range $i, $tag := . }}{{ if $i }}, {{ end }}#{{ $tag }}{{ end }}</span>
+      {{ end }}
+    </div>
+    {{ with .Summary }}
+    <p class="post-summary">{{ . | plainify | truncate 200 }}</p>
+    {{ end }}
+  </article>
+  <hr>
+  {{ end }}
+</section>
+{{ end }}

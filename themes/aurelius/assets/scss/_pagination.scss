@@ -1,22 +1,19 @@
 .pagination {
-
 	list-style-type: none;
-	// margin-left: 6rem;
-	// margin-top: 2rem;
 	margin-bottom: 2rem;
 
 	&__item {
 		display: inline-block;
-		font-size: 1rem;
+		font-size: 1.3rem;
 		background-color: rgba(#000,.1);
+		border-radius: 4px;
 
 		&:hover {
 			background-color: rgba(#000,.2);
 		}
-		
-		
+
 		&:not(:first-child) {
-			margin-left: 1rem;
+			margin-left: 0.5rem;
 		}
 
 		&--next {
@@ -42,12 +39,11 @@
 				background-color: rgba(#000,.5);
 			}
 		}
-
 	}
 
 	&__link {
 		display: block;
-		padding: 2rem 2.5rem;
+		padding: 1rem 1.5rem;
 		color: #fff;
 		text-decoration: none;
 

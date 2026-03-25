@@ -1,0 +1,70 @@
+.post-list {
+  padding: ($space * 4) 0;
+
+  > h1 {
+    margin-bottom: $space * 3;
+  }
+}
+
+.post-item {
+  margin: ($space * 2) 0;
+
+  h2, h3 {
+    margin: 0 0 $space 0;
+
+    &::before {
+      content: none;
+    }
+
+    a {
+      color: $font-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $bg-color;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.post-meta {
+  color: $secondary-color;
+  font-size: $font-size;
+  margin-bottom: $space;
+
+  .post-date {
+    &::before {
+      content: "[ ";
+    }
+    &::after {
+      content: " ]";
+    }
+  }
+
+  .post-author {
+    &::before {
+      content: " by ";
+    }
+  }
+
+  .post-tags {
+    margin-left: $space;
+    color: $primary-color;
+  }
+
+  .reading-time {
+    margin-left: $space;
+    color: $secondary-color;
+
+    &::before {
+      content: "| ";
+    }
+  }
+}
+
+.post-summary {
+  color: $secondary-color;
+  margin: $space 0 0 0;
+  line-height: 1.6em;
+}

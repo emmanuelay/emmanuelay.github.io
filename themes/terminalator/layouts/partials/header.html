@@ -1,0 +1,10 @@
+<nav class="terminal-nav">
+  <div class="terminal-logo">
+    <a href="/" class="terminal-prompt">{{ .Site.Title }}</a>
+  </div>
+  <div class="terminal-menu">
+    {{ range .Site.Menus.main }}
+    <a class="menu-item{{ if $.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL }}"{{ with .Page }}{{ with .Params.id }} id="{{ . }}"{{ end }}{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </div>
+</nav>

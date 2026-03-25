@@ -11,16 +11,16 @@ html {
 }
 
 body {
-	box-sizing: border-box; /* Borders and padding are added to the height */
+	box-sizing: border-box;
 	color: $fg-color;
 	background-color: $doc-bg-color;
 	font-family: $content-font-family;
-	padding: 0rem;
+	padding: 0;
 }
 
 h1, h2, h3, h4, h5 {
 	font-family: $header-font-family;
-	font-weight: normal;
+	font-weight: 600;
 }
 
 .content {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5 {
 
 section {
 	margin: 0 auto;
-	
+
 	@media (max-width: 576px) {
 		width: 100%;
 	}
@@ -44,15 +44,8 @@ section {
 	}
 }
 
-.pattern {
-	line, polyline { fill: none; stroke: red; stroke-width: 2.5; }
-	stroke: red;
-}
-
 hr {
-	background-image: url(/img/meander.svg);
-	background-repeat: repeat-x;
-	background-size: 30px 30px; 
-	height: 30px;
+	height: 1px;
 	border: 0;
+	background-color: $tertiary-color;
 }

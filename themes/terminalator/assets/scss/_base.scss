@@ -1,0 +1,179 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $font-color;
+  background-color: $bg-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: $primary-color;
+  color: $bg-color;
+}
+
+.container {
+  max-width: $page-width;
+  margin: 0 auto;
+  padding: 0 ($space * 2);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-stack;
+  font-weight: 700;
+  color: $font-color;
+  margin-top: $space * 4;
+  margin-bottom: $space * 2;
+}
+
+.terminal {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: $font-size;
+    font-weight: 600;
+  }
+
+  h1 {
+    &::before {
+      content: "# ";
+      color: $secondary-color;
+    }
+  }
+
+  h2 {
+    &::before {
+      content: "## ";
+      color: $secondary-color;
+    }
+  }
+
+  h3 {
+    &::before {
+      content: "### ";
+      color: $secondary-color;
+    }
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $bg-color;
+  }
+}
+
+p {
+  margin: ($space * 2) 0;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed $secondary-color;
+  margin: ($space * 4) 0;
+}
+
+blockquote {
+  border-left: 3px solid $secondary-color;
+  margin-left: 0;
+  padding-left: $space * 2;
+  color: $secondary-color;
+  font-style: italic;
+}
+
+ul, ol {
+  padding-left: $space * 2;
+}
+
+ul {
+  list-style: none;
+
+  li {
+    &::before {
+      content: "- ";
+      color: $secondary-color;
+      margin-left: -($space * 2);
+    }
+  }
+}
+
+ol {
+  list-style-position: inside;
+}
+
+code {
+  font-family: $font-stack;
+  font-size: $font-size;
+  color: $secondary-color;
+  background-color: $code-bg-color;
+  padding: 2px 6px;
+  border-radius: 2px;
+
+  &::before, &::after {
+    content: "`";
+    color: $secondary-color;
+  }
+}
+
+pre {
+  background-color: $code-bg-color;
+  border: 1px solid $secondary-color;
+  padding: $space * 2;
+  overflow-x: auto;
+  margin: ($space * 2) 0;
+
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: $font-color;
+
+    &::before, &::after {
+      content: none;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: ($space * 2) 0;
+
+  th, td {
+    padding: $space;
+    border: 1px solid $secondary-color;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    color: $primary-color;
+  }
+}
+
+strong {
+  font-weight: 700;
+  color: $font-color;
+}
+
+em {
+  font-style: italic;
+  color: $secondary-color;
+}

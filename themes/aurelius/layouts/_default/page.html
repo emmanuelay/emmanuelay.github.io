@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="content">
+<section class="post">
+	<h1>{{ .Title }}</h1>
+	<span class="intro">
+		{{ .Summary }}
+	</span>
+	<span class="content">
+		{{ $body := replace .Content .Summary "" }}
+		{{ $body | safeHTML }}
+	</span>
+</section>
+</div>
+{{ end }}

@@ -1,0 +1,30 @@
+{{ $title := .Site.Title }}
+{{ if not .IsHome }}
+  {{ $title = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+
+{{ $options := (dict "targetPath" "css/terminalator.css" "outputStyle" "compressed") }}
+{{ $style := resources.Get "scss/terminalator.scss" | css.Sass $options | resources.Minify }}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
+<meta name="keywords" content="{{ with .Site.Params.Keywords }}{{ . }}{{ end }}">
+<meta name="author" content="{{ with .Site.Params.Author }}{{ . }}{{ end }}">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+{{ with .Site.Params.googleAnalytics }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
+{{ end }}

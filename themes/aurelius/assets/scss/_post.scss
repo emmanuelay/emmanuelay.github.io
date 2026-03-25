@@ -1,133 +1,136 @@
 .post {
-
 	background-color: $bg-color;
+
+	a {
+		color: $link-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
 
 	ul {
 		list-style-type: square;
-		margin-top: 0rem;
+		margin-top: 0;
 		margin-bottom: 2.5rem;
+		padding-left: 2rem;
 	}
 
 	&__meta {
-		margin-top: 1.5rem;
-		color: rgba($primary-color, .5);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		color: rgba($primary-color, .6);
+		font-size: 1.5rem;
 	}
 
 	@media (max-width: 576px) {
-		
-		&__meta {
-			margin-top: 1.0rem;
-		}
-
-		padding-top: 5rem;
-		padding-bottom: 10rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding: 5rem 2.5rem 10rem;
 
 		pre {
 			padding: 2rem;
-			font-size: 2rem;
+			font-size: 1.4rem;
 		}
 
 		h1:first-child {
 			font-size: 3rem;
-			letter-spacing: -.1rem;
+			letter-spacing: -.05rem;
 		}
 
 		h2 {
-			font-size: 2.5rem;
-			margin-top: 5rem;
-			margin-bottom: 2rem;
+			font-size: 2.2rem;
+			margin-top: 4rem;
+			margin-bottom: 1.5rem;
 		}
-	
+
 		h3 {
-			font-size: 2rem;
-			margin-top: 5rem;
-			margin-bottom: 2rem;
-			color: #888;
+			font-size: 1.8rem;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+			color: rgba($primary-color, .7);
 		}
 
 		p {
-			margin-bottom: 2.0rem;
-			font-size: 1.5rem;
-			font-weight: 300;
-			line-height: 1.7em;
-	
+			margin-bottom: 1.8rem;
+			font-size: 1.6rem;
+			font-weight: 400;
+			line-height: 1.7;
+
 			code {
-				background-color: rgba(1,1,1,0.1);
+				background-color: rgba(1,1,1,0.07);
 				display: inline;
-				padding: 4px 10px;
+				padding: 2px 8px;
 				border-radius: 4px;
+				font-size: 1.4rem;
 			}
-	
+
 			a {
 				color: $link-color;
-		
+
 				&:hover {
-					color: #000;
+					color: $link-hover-color;
 				}
 			}
 		}
 	}
 
 	@media (min-width: 577px) {
-		padding-top: 20rem;
-		padding-bottom: 20rem;
+		padding: 10rem 0 12rem;
 
 		pre {
 			padding: 3rem;
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 
 		h1:first-child {
-			font-size: 5rem;
+			font-size: 4rem;
 			letter-spacing: -.1rem;
 		}
 
 		h2 {
-			font-size: 3.5rem;
-			margin-top: 5rem;
-			margin-bottom: 2rem;
+			font-size: 2.8rem;
+			margin-top: 4rem;
+			margin-bottom: 1.5rem;
 		}
-	
+
 		h3 {
-			font-size: 3rem;
-			margin-top: 5rem;
-			margin-bottom: 2rem;
-			color: #888;
+			font-size: 2.2rem;
+			margin-top: 3rem;
+			margin-bottom: 1.5rem;
+			color: rgba($primary-color, .7);
 		}
 
 		p {
-			margin-bottom: 2.0rem;
-			font-size: 2rem;
-			font-weight: 300;
-			line-height: 1.7em;
-	
+			margin-bottom: 2rem;
+			font-size: 1.8rem;
+			font-weight: 400;
+			line-height: 1.75;
+
 			code {
-				background-color: rgba(1,1,1,0.1);
+				background-color: rgba(1,1,1,0.07);
 				display: inline;
-				padding: 4px 10px;
+				padding: 2px 8px;
 				border-radius: 4px;
+				font-size: 1.5rem;
 			}
-	
+
 			a {
 				color: $link-color;
 
 				&:hover {
-					color: rgba($link-color,.5);
+					color: $link-hover-color;
 				}
 			}
 		}
 	}
 
 	.intro p {
-		font-weight: 500;	
+		font-weight: 500;
 	}
-
 
 	#TableOfContents {
 		display: none;
-		padding: 2rem 0rem;
+		padding: 2rem 0;
 		font-size: 1.6rem;
 		font-weight: 400;
 		line-height: 3rem;
@@ -136,13 +139,13 @@
 			color: $link-color;
 
 			&:hover {
-				color: #000;
+				color: $link-hover-color;
 			}
-		}		
+		}
 
 		ul:first-child {
 			display: inline-block;
-			list-style-type:decimal;
+			list-style-type: decimal;
 			padding: 3rem 5rem;
 			background-color: rgba(255,255,255,0.5);
 			border-radius: 1rem;
@@ -160,8 +163,8 @@
 
 	pre {
 		overflow-x: auto;
-		border-radius: 1rem;
-		margin: 0rem;
-		margin-bottom: 2.0rem;
+		border-radius: 0.8rem;
+		margin: 0;
+		margin-bottom: 2rem;
 	}
 }

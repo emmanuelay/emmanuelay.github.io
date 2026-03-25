@@ -1,0 +1,9 @@
+{{ with .Date }}
+<span class="post-date">{{ .Format "2006-01-02" }}</span>
+{{ end }}
+{{ with .Params.author }}
+<span class="post-author">{{ . }}</span>
+{{ end }}
+{{ with .Params.tags }}
+<span class="post-tags">{{ range $i, $tag := . }}{{ if $i }}, {{ end }}#{{ $tag }}{{ end }}</span>
+{{ end }}

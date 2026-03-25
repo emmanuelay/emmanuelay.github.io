@@ -6,4 +6,4 @@ draft: false
 type: home
 ---
 
-Hello, I’m Emmanuel. On this website you’ll discover a collection of inspiring things I've found online - and some of my thoughts.
+Hello, I’m Emmanuel. Welcome to my corner of the internet — where side projects come to life, opinions are loosely held, and the deploy pipeline is probably running right now.

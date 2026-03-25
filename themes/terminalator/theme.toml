@@ -1,0 +1,10 @@
+name = "Terminalator"
+license = "MIT"
+licenselink = "https://github.com/emmanuelay"
+description = "A terminal-inspired Hugo theme"
+homepage = "https://emmanuelay.se"
+min_version = "0.80.0"
+
+[author]
+  name = "Emmanuel Ay"
+  homepage = "https://emmanuelay.se"
