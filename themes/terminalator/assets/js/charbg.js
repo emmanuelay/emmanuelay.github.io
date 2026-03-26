@@ -7,20 +7,19 @@
   var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var maxOpacity = 0.12;
   var cols, rows, drops, grid;
+  var lastTime = 0;
+  var resizeTimer;
 
   function randomChar() {
     return chars[Math.floor(Math.random() * chars.length)];
   }
 
-  function resize() {
+  function setup() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight * 0.5;
     cols = Math.ceil(canvas.width / cellSize);
     rows = Math.ceil(canvas.height / cellSize);
-    initDrops();
-  }
 
-  function initDrops() {
     grid = [];
     for (var col = 0; col < cols; col++) {
       grid[col] = [];
@@ -34,13 +33,19 @@
       drops.push({
         y: Math.floor(Math.random() * rows),
         prevHead: -1,
-        speed: 0.02 + Math.random() * 0.05,
+        speed: 0.3 + Math.random() * 0.7,
         opacity: Math.random() * maxOpacity
       });
     }
   }
 
-  function draw() {
+  function draw(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    var delta = (timestamp - lastTime) / 1000;
+    lastTime = timestamp;
+
+    if (delta > 0.1) delta = 0.1;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = cellSize + 'px "Space Mono", monospace';
     ctx.textAlign = 'center';
@@ -75,20 +80,23 @@
         ctx.fillText(grid[col][row], x, y);
       }
 
-      drop.y += drop.speed;
+      drop.y += drop.speed * delta;
       if (drop.y >= rows * 2) {
         drop.y = 0;
         drop.prevHead = -1;
         drop.opacity = Math.random() * maxOpacity;
-        drop.speed = 0.02 + Math.random() * 0.05;
+        drop.speed = 0.3 + Math.random() * 0.7;
       }
     }
 
     requestAnimationFrame(draw);
   }
 
-  resize();
+  setup();
   requestAnimationFrame(draw);
 
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setup, 200);
+  });
 })();
