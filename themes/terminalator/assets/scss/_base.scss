@@ -5,6 +5,10 @@
 html {
   font-size: $font-size;
   text-rendering: geometricPrecision;
+
+  @media (max-width: $mobile) {
+    font-size: 15px;
+  }
 }
 
 body {

@@ -2,9 +2,35 @@
   <div class="terminal-logo">
     <a href="/" class="terminal-prompt">{{ .Site.Title }}</a>
   </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="terminal-menu">
     {{ range .Site.Menus.main }}
     <a class="menu-item{{ if $.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL }}"{{ with .Page }}{{ with .Params.id }} id="{{ . }}"{{ end }}{{ end }}>{{ .Name }}</a>
     {{ end }}
   </div>
+  <div class="menu-overlay"></div>
 </nav>
+<script>
+(function() {
+  var btn = document.querySelector('.hamburger');
+  var menu = document.querySelector('.terminal-menu');
+  var overlay = document.querySelector('.menu-overlay');
+  function toggle() {
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+  }
+  function close() {
+    menu.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+  btn.addEventListener('click', toggle);
+  overlay.addEventListener('click', close);
+  menu.querySelectorAll('.menu-item').forEach(function(item) {
+    item.addEventListener('click', close);
+  });
+})();
+</script>
