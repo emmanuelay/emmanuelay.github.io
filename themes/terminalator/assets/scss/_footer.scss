@@ -18,6 +18,16 @@
   color: $secondary-color;
   font-size: $font-size;
 
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: $space;
+
+    .separator {
+      display: none;
+    }
+  }
+
   .separator {
     margin: 0 $space;
     color: $secondary-color;
@@ -41,10 +51,20 @@
     color: $secondary-color;
     text-decoration: none;
     font-size: $font-size;
+    display: inline-flex;
+    align-items: center;
+    gap: $space / 2;
 
     &:hover {
       color: $bg-color;
       background-color: $primary-color;
     }
   }
+}
+
+.social-icon {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentColor;
+  vertical-align: middle;
 }
