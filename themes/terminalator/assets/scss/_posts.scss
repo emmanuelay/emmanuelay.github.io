@@ -6,6 +6,12 @@
   }
 }
 
+.post-item + .post-item {
+  border-top: 1px dashed $secondary-color;
+  margin-top: $space * 4;
+  padding-top: $space * 4;
+}
+
 .post-item {
   margin: ($space * 2) 0;
 
@@ -34,12 +40,6 @@
   margin-bottom: $space;
 
   .post-date {
-    &::before {
-      content: "[ ";
-    }
-    &::after {
-      content: " ]";
-    }
   }
 
   .post-author {
@@ -64,7 +64,7 @@
 }
 
 .post-summary {
-  color: $secondary-color;
+  color: $font-color;
   margin: $space 0 0 0;
-  line-height: 1.6em;
+  line-height: 1.7em;
 }

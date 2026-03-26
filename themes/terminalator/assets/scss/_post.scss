@@ -24,6 +24,11 @@
     color: $primary-color;
   }
 
+  h2 + p + h2 {
+    border-top: 1px dashed $secondary-color;
+    padding-top: $space * 4;
+  }
+
   h3 {
     margin-top: $space * 3;
     margin-bottom: $space;

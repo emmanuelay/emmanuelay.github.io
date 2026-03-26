@@ -36,7 +36,7 @@
     height: 1em;
     margin-left: 4px;
     background-color: $primary-color;
-    vertical-align: text-bottom;
+    vertical-align: -5%;
     animation: cursor-blink 800ms infinite;
   }
 }
@@ -55,15 +55,6 @@
     text-decoration: none;
     font-weight: 400;
 
-    &::before {
-      content: "[";
-      color: $secondary-color;
-    }
-
-    &::after {
-      content: "]";
-      color: $secondary-color;
-    }
 
     &:hover {
       color: $bg-color;

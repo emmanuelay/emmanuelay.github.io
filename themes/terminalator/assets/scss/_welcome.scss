@@ -1,8 +1,8 @@
 .welcome {
-  padding: ($space * 6) 0;
+  padding: ($space * 4) 0 0 0;
 
   @media (max-width: $mobile) {
-    padding: ($space * 3) 0;
+    padding: ($space * 2) 0 0 0;
   }
 }
 
@@ -20,8 +20,8 @@
   }
 
   p {
-    color: $secondary-color;
-    line-height: 1.6em;
+    color: $font-color;
+    line-height: 1.7em;
   }
 }
 

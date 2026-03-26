@@ -8,7 +8,6 @@
 
 <section class="recent-posts">
   <h2>Recent posts</h2>
-  <hr>
   {{ range (first 3 (where .Site.RegularPages "Section" "posts")) }}
   <article class="post-item">
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
@@ -22,7 +21,6 @@
     <p class="post-summary">{{ . | plainify | truncate 200 }}</p>
     {{ end }}
   </article>
-  <hr>
   {{ end }}
 </section>
 {{ end }}
