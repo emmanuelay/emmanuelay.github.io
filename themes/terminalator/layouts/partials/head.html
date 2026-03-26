@@ -31,3 +31,5 @@
   gtag('config', '{{ . }}');
 </script>
 {{ end }}
+{{ $charbg := resources.Get "js/charbg.js" | resources.Minify }}
+<script defer src="{{ $charbg.RelPermalink }}"></script>
