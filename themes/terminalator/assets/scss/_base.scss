@@ -28,7 +28,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-stack;
-  font-size: $font-size;
+  font-size: inherit;
   line-height: $line-height;
   color: $font-color;
   background-color: $bg-color;
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .terminal {
   h1, h2, h3, h4, h5, h6 {
-    font-size: $font-size;
+    font-size: inherit;
     font-weight: 600;
   }
 
@@ -134,7 +134,7 @@ ol {
 
 code {
   font-family: $font-stack;
-  font-size: $font-size;
+  font-size: inherit;
   color: $secondary-color;
   background-color: $code-bg-color;
   padding: 2px 6px;
