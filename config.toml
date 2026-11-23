@@ -1,7 +1,7 @@
 baseURL = "https://emmanuelay.github.io"
 languageCode = "en-us"
 title = "Streams of thought"
-theme = "terminalator"
+theme = "stilla"
 disableKinds = ["taxonomy", "term"]
 disableHugoGeneratorInject = true
 paginate = 1
@@ -18,6 +18,6 @@ paginate = 1
     guessSyntax = false
     hl_Lines = ""
     lineNoStart = 1
-    noClasses = true
+    noClasses = false
     style = "dracula"
     tabWidth = 2

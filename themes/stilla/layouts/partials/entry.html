@@ -1,0 +1,7 @@
+<li class="entry">
+  <a class="entry-link" href="{{ .RelPermalink }}">
+    <span class="entry-title">{{ .Title }}</span>
+    <time class="entry-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+    {{ with .Summary }}<span class="entry-summary">{{ . | plainify | truncate 160 }}</span>{{ end }}
+  </a>
+</li>

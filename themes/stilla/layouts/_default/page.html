@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $isPost := eq .Section "posts" }}
+<article class="article">
+  <header class="page-header">
+    {{ if $isPost }}<div class="meta">{{ partial "meta.html" . }}<span>{{ .ReadingTime }} min read</span></div>{{ end }}
+    <h1 class="page-title">{{ .Title }}</h1>
+  </header>
+  {{/* Table of contents is opt-in: set `toc: true` in front matter */}}
+  {{ if .Params.toc }}{{ with .TableOfContents }}{{ if findRE "<li>" . }}
+  <nav class="toc">
+    <h2 class="label">Contents</h2>
+    {{ . }}
+  </nav>
+  {{ end }}{{ end }}{{ end }}
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  {{ if $isPost }}{{ with .Params.tags }}
+  <footer class="article-footer">
+    <ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  </footer>
+  {{ end }}{{ end }}
+</article>
+{{ end }}

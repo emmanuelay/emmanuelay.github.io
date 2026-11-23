@@ -1,0 +1,48 @@
+// Typography
+$font-display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-text: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+// Layout
+$measure: 38rem;
+$gutter: 1.5rem;
+$sidebar: 16rem;
+
+// Breakpoints
+$small: 600px;
+$wide: 900px;
+
+// Palette: light paper with a deep fjord-blue sidebar panel
+:root {
+  --bg: #f7f6f3;
+  --surface: #eeede8;
+  --text: #24292e;
+  --muted: #6f7379;
+  --faint: #a4a7ab;
+  --line: #e3e2dd;
+  --accent: #2f6286;
+  --selection: #d5e2ec;
+
+  --side-bg: #24384a;
+  --side-text: #f1efe9;
+  --side-muted: #a3b4c2;
+  --side-faint: #70879a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #191c1f;
+    --surface: #23282c;
+    --text: #e6e4df;
+    --muted: #9a9fa5;
+    --faint: #62676d;
+    --line: #2e3338;
+    --accent: #8fb8d8;
+    --selection: #2b4257;
+
+    --side-bg: #1b2a37;
+    --side-text: #e6e4df;
+    --side-muted: #8a9fb0;
+    --side-faint: #5c7183;
+  }
+}

@@ -1,0 +1,10 @@
+name = "Stilla"
+license = "MIT"
+licenselink = "https://github.com/emmanuelay"
+description = "A calm, minimal, Scandinavian-inspired Hugo theme"
+homepage = "https://emmanuelay.se"
+min_version = "0.128.0"
+
+[author]
+  name = "Emmanuel Ay"
+  homepage = "https://emmanuelay.se"

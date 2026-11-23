@@ -1,0 +1,191 @@
+// Wide screens: a full-height fjord-blue sidebar panel on the left and a
+// reading column beside it. Below $wide the panel becomes a top bar.
+
+.wrap {
+  display: grid;
+  grid-template-columns: $sidebar minmax(0, 1fr);
+  min-height: 100vh;
+
+  @media (max-width: $wide) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Sidebar panel
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4.5rem 2.5rem 2.5rem;
+  background: var(--side-bg);
+  color: var(--side-text);
+  font-family: $font-display;
+
+  @media (max-width: $wide) {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem $gutter;
+  }
+}
+
+.site-name {
+  position: relative;
+  z-index: 20;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &:hover { color: var(--side-muted); }
+}
+
+// Holds nav + social; a column on wide screens, a full-screen overlay on small
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 3rem;
+
+  a {
+    align-self: flex-start;
+    font-size: 0.85rem;
+    color: var(--side-muted);
+
+    &:hover, &[aria-current="page"] { color: var(--side-text); }
+  }
+}
+
+.sidebar-foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+
+  .social {
+    flex-direction: column;
+    gap: 0.4rem;
+
+    a { color: var(--side-muted); }
+    a:hover { color: var(--side-text); }
+  }
+
+  .copyright { color: var(--side-faint); }
+}
+
+.social {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    align-self: flex-start;
+    color: var(--muted);
+
+    &:hover { color: var(--text); }
+  }
+}
+
+.copyright { color: var(--faint); }
+
+// Content column, offset from the panel rather than centred in the window
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  // No explicit width: as a grid item it fills the column minus its margin,
+  // so it can never spill past the right edge.
+  min-width: 0;
+  max-width: $measure + $gutter * 2;
+  margin-left: clamp(#{$gutter}, 8vw, 7.5rem);
+  padding: 0 $gutter;
+
+  @media (max-width: $wide) {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  flex: 1;
+  padding: 4.5rem 0 6rem;
+
+  @media (max-width: $wide) { padding: 3.5rem 0 4.5rem; }
+}
+
+// Footer: small screens only
+.site-footer {
+  display: none;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  font-family: $font-display;
+  font-size: 0.75rem;
+
+  @media (max-width: $wide) { display: flex; }
+}
+
+// Page header (posts, pages, listings)
+.page-header { margin-bottom: 3rem; }
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  @media (max-width: $small) { font-size: 1.65rem; }
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: $font-display;
+  font-size: 0.75rem;
+  color: var(--muted);
+
+  > * + *::before {
+    content: "·";
+    margin-right: 0.75rem;
+    color: var(--faint);
+  }
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 3rem;
+  font-family: $font-display;
+  font-size: 0.8rem;
+  color: var(--muted);
+
+  a:hover { color: var(--text); }
+}
+
+.pagination-count { color: var(--faint); }
+
+// Small screens: footer divider runs edge to edge, like the post dividers
+@media (max-width: $wide) {
+  .site-footer {
+    margin-inline: calc(50% - 50vw);
+    padding-inline: calc(50vw - 50%);
+  }
+}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="intro">
+  <h1 class="intro-title">{{ .Title }}</h1>
+  <div class="intro-text">
+    {{ .Content }}
+  </div>
+</section>
+
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ with $posts }}
+<section class="writing">
+  <h2 class="label">Writing</h2>
+  <ul class="entries">
+    {{ range first 5 . }}
+    {{ partial "entry.html" . }}
+    {{ end }}
+  </ul>
+  {{ if gt (len $posts) 5 }}
+  <a class="more" href="{{ "posts/" | relURL }}">All writing</a>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

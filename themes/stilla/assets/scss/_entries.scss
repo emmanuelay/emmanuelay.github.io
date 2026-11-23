@@ -1,0 +1,41 @@
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Dividers only between entries, none above the first or below the last
+.entry + .entry { border-top: 1px solid var(--line); }
+.entry:first-child .entry-link { padding-top: 0; }
+
+.entry-link {
+  display: block;
+  padding: 1.6rem 0;
+
+  &:hover .entry-title { color: var(--accent); }
+}
+
+.entry-title {
+  display: block;
+  font-family: $font-display;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.entry-date {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: $font-display;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.entry-summary {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}

@@ -1,0 +1,7 @@
+// Chroma styles generated with `hugo gen chromastyles`
+// (rose-pine-dawn for light, rose-pine-moon for dark)
+@import "syntax-light";
+
+@media (prefers-color-scheme: dark) {
+  @import "syntax-dark";
+}

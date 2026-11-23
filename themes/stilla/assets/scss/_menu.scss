@@ -1,0 +1,104 @@
+// Mobile menu: a burger that folds into a cross, and a calm full-screen
+// overlay in the sidebar colour. Only active below $wide.
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  z-index: 20;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: -0.4rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--side-text);
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 0.45rem;
+    right: 0.45rem;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), top 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  span:first-child { top: calc(50% - 4px); }
+  span:last-child { top: calc(50% + 3px); }
+
+  &:focus-visible {
+    outline: 2px solid var(--side-muted);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .menu-open & {
+    span:first-child { top: calc(50% - 0.75px); transform: rotate(45deg); }
+    span:last-child { top: calc(50% - 0.75px); transform: rotate(-45deg); }
+  }
+
+  @media (max-width: $wide) { display: block; }
+}
+
+@media (max-width: $wide) {
+  .sidebar-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    flex: none;
+    justify-content: space-between;
+    padding: 7.5rem $gutter 2.5rem;
+    background: var(--side-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+
+    .menu-open & {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.35s ease;
+    }
+  }
+
+  .site-nav {
+    gap: 1.1rem;
+    margin-top: 0;
+
+    a {
+      font-size: 1.9rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(0.5rem);
+      transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease;
+
+      .menu-open & { opacity: 1; transform: none; }
+    }
+
+    // Gentle stagger as the menu opens
+    @for $i from 1 through 8 {
+      .menu-open & a:nth-child(#{$i}) { transition-delay: 0.05s + $i * 0.04s, 0.05s + $i * 0.04s, 0s; }
+    }
+  }
+
+  .sidebar-foot {
+    margin-top: 0;
+    font-size: 0.8rem;
+
+    .social {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  // Keep the page behind the menu from scrolling
+  html.menu-open { overflow: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle span,
+  .sidebar-menu,
+  .site-nav a { transition: none !important; }
+}

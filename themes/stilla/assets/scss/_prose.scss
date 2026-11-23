@@ -1,0 +1,134 @@
+.prose {
+  > :first-child { margin-top: 0; }
+
+  p, ul, ol, blockquote, pre, table, figure { margin: 0 0 1.4em; }
+
+  h2 {
+    font-size: 1.35rem;
+    margin: 2.6em 0 0.8em;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 2.2em 0 0.6em;
+  }
+
+  h4, h5, h6 {
+    font-size: 1rem;
+    margin: 2em 0 0.5em;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+
+    &:hover { text-decoration-color: var(--accent); }
+  }
+
+  strong { font-weight: 500; }
+
+  ul, ol { padding-left: 1.25em; }
+  li + li { margin-top: 0.35em; }
+  li::marker { color: var(--faint); }
+
+  blockquote {
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--line);
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  hr {
+    border: 0;
+    width: 3rem;
+    height: 1px;
+    margin: 3rem 0;
+    background: var(--line);
+  }
+
+  img { display: block; margin: 2rem 0; border-radius: 4px; }
+
+  code {
+    font-family: $font-mono;
+    font-size: 0.85em;
+    letter-spacing: 0;
+    padding: 0.12em 0.35em;
+    border-radius: 4px;
+    background: var(--surface);
+  }
+
+  pre {
+    padding: 1.1rem 1.25rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    background: var(--surface) !important;
+    font-size: 0.85rem;
+    line-height: 1.6;
+
+    code {
+      padding: 0;
+      background: none;
+      font-size: inherit;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  th, td {
+    padding: 0.6rem 0.75rem 0.6rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+
+  th {
+    font-family: $font-display;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+  }
+}
+
+.toc {
+  margin-bottom: 3rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  background: var(--surface);
+
+  .label { margin-bottom: 0.5rem; }
+
+  ul { list-style: none; margin: 0; padding: 0; }
+  ul ul { padding-left: 1rem; }
+  a { font-size: 0.92rem; color: var(--muted); }
+  a:hover { color: var(--text); }
+}
+
+.article-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    background: var(--surface);
+    font-family: $font-display;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+}
