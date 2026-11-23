@@ -1,5 +1,5 @@
 baseURL = "https://emmanuelay.github.io"
-languageCode = "en-us"
+locale = "en-us"
 title = "Streams of thought"
 theme = "stilla"
 disableKinds = ["taxonomy", "term"]
@@ -19,5 +19,4 @@ paginate = 1
     hl_Lines = ""
     lineNoStart = 1
     noClasses = false
-    style = "dracula"
     tabWidth = 2
